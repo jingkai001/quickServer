@@ -1,0 +1,17 @@
+.container{
+    background-color: #fbf9fe;
+    flex:1;
+    flex-direction: column;
+}
+
+.nav_title{
+    padding-top: 50px;
+    padding-bottom: 80px;
+    justify-content: center;
+}
+.nav_title_detail{
+    padding:30px 40px;
+    border-color: #bbbbbb;
+    color: #bbb;
+    border-bottom-width: 2px;
+}
