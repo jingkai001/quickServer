@@ -1,0 +1,68 @@
+<template>
+    <div class="container">
+        <tabs>
+            <tab-content class="group_container">
+                <div class="group_content">
+                    <div class="introduce">
+                        <text lines="3" class="introduce_detail">
+                            以下将展示新应用组件能力，组件样式进供参考，开发者可根据自身需求自定义组件样式，具体属性参数详见新应用开发文档
+                        </text>
+                    </div>
+                    <div class="item_container">
+                        <div class="item_title">
+                            <text class="item_title_detail {{list.compo_view}}_txt" onclick="select_conFn('compo_basic')">基础组件</text>
+                        </div>
+                        <div class="item_content {{list.compo_basic}}">
+                            <div class="item_li"></div>
+                        </div>
+                    </div>
+                </div>
+            </tab-content>
+        </tabs>
+    </div>
+</template>
+
+<style>
+    .container{
+        background-color: #fbf9fe;
+        flex: 1;
+        flex-direction: column;
+    }
+    .group_container{
+        flex:1;
+        flex-direction: column;
+    }
+    .group_content{
+        flex: 1;
+        flex-direction: column;
+    }
+    .introduce{
+        margin:60px 0 80px;
+        padding:0 80px;
+    }
+    .introduce_detail{
+        text-align: center;
+        flex: 1;
+        line-height: 50px;
+        color: #888;
+    }
+
+</style>
+
+<script>
+    import router from '@system.router';
+
+    module.exports = {
+        data:{
+            list:{
+
+            }
+        },
+
+        routePath (path,params) {
+            router.push({uri:path,params:params})
+        }
+    }
+
+
+</script>

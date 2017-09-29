@@ -69,7 +69,7 @@
 	module.exports = function(module, exports, $app_require$){"use strict";
 	
 	module.exports = {
-	  manifest: { "package": "com.application.demo", "name": "quickServer", "versionName": "1.0.0", "versionCode": "1", "icon": "/Common/logo.png", "features": [{ "name": "system.fetch" }], "permissions": [{ "origin": "*" }], "config": { "logLevel": "off" }, "router": { "entry": "Demo", "pages": { "Demo": { "component": "index" } } }, "display": { "titleBarBackgroundColor": "#f2f2f2", "titleBarTextColor": "#414141", "pages": { "Demo": { "titleBarText": "Demo" } } } }
+	  manifest: { "package": "com.application.demo", "name": "quickServer", "versionName": "1.0.0", "versionCode": "1", "icon": "/Common/logo.png", "features": [{ "name": "system.fetch" }], "permissions": [{ "origin": "*" }], "config": { "logLevel": "debug" }, "router": { "entry": "Home", "pages": { "Home": { "component": "index" } } }, "display": { "backgroundColor": "#ffffff", "titleBar": true, "titleBarBackgroundColor": "#f2f2f2", "titleBarTextColor": "#414141", "pages": { "Home": { "titleBarText": "新应用组件展示" } } } }
 	};}
 
 /***/ }
@@ -81,7 +81,7 @@
   else {
     window.createAppHandler = createAppHandler
     // H5注入manifest以获取features
-    global.manifest = {"package":"com.application.demo","name":"quickServer","versionName":"1.0.0","versionCode":"1","icon":"/Common/logo.png","features":[{"name":"system.fetch"}],"permissions":[{"origin":"*"}],"config":{"logLevel":"off"},"router":{"entry":"Demo","pages":{"Demo":{"component":"index"}}},"display":{"titleBarBackgroundColor":"#f2f2f2","titleBarTextColor":"#414141","pages":{"Demo":{"titleBarText":"Demo"}}}};
+    global.manifest = {"package":"com.application.demo","name":"quickServer","versionName":"1.0.0","versionCode":"1","icon":"/Common/logo.png","features":[{"name":"system.fetch"}],"permissions":[{"origin":"*"}],"config":{"logLevel":"debug"},"router":{"entry":"Home","pages":{"Home":{"component":"index"}}},"display":{"backgroundColor":"#ffffff","titleBar":true,"titleBarBackgroundColor":"#f2f2f2","titleBarTextColor":"#414141","pages":{"Home":{"titleBarText":"新应用组件展示"}}}};
   }
 })();
 //# sourceMappingURL=app.js.map

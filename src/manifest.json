@@ -14,19 +14,21 @@
     "logLevel": "debug"
   },
   "router": {
-    "entry": "Demo",
+    "entry": "Home",
     "pages": {
-      "Demo": {
+      "Home": {
         "component": "index"
       }
     }
   },
   "display": {
+    "backgroundColor":"#ffffff",
+    "titleBar":true,
     "titleBarBackgroundColor": "#f2f2f2",
     "titleBarTextColor": "#414141",
     "pages": {
-      "Demo": {
-        "titleBarText": "Demo"
+      "Home": {
+        "titleBarText": "新应用组件展示"
       }
     }
   }

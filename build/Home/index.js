@@ -75,12 +75,49 @@
 	  ],
 	  "children": [
 	    {
-	      "type": "text",
-	      "attr": {
-	        "value": function () {return '欢迎使用' + (this.title)}
-	      },
-	      "classList": [
-	        "title"
+	      "type": "tabs",
+	      "attr": {},
+	      "children": [
+	        {
+	          "type": "tab-content",
+	          "attr": {},
+	          "classList": [
+	            "group_container"
+	          ],
+	          "children": [
+	            {
+	              "type": "div",
+	              "attr": {},
+	              "classList": [
+	                "group_content"
+	              ],
+	              "children": [
+	                {
+	                  "type": "div",
+	                  "attr": {},
+	                  "classList": [
+	                    "introduce"
+	                  ],
+	                  "children": [
+	                    {
+	                      "type": "text",
+	                      "attr": {
+	                        "lines": "3",
+	                        "value": " 以下将展示新应用组件能力，组件样式进供参考，开发者可根据自身需求自定义组件样式，具体属性参数详见新应用开发文档 "
+	                      },
+	                      "classList": [
+	                        "introduce_detail"
+	                      ],
+	                      "events": {
+	                        "click": function (evt) {this.routePath('caseList',{back:'false'},evt)}
+	                      }
+	                    }
+	                  ]
+	                }
+	              ]
+	            }
+	          ]
+	        }
 	      ]
 	    }
 	  ]
@@ -92,13 +129,33 @@
 
 	module.exports = {
 	  ".container": {
-	    "flexDirection": "column",
-	    "justifyContent": "center",
-	    "alignItems": "center"
+	    "backgroundColor": "#fbf9fe",
+	    "flex": 1,
+	    "flexDirection": "column"
 	  },
-	  ".title": {
-	    "fontSize": "40px",
-	    "textAlign": "center"
+	  ".group_container": {
+	    "flex": 1,
+	    "flexDirection": "column"
+	  },
+	  ".group_content": {
+	    "flex": 1,
+	    "flexDirection": "column"
+	  },
+	  ".introduce": {
+	    "marginTop": "60px",
+	    "marginRight": "0px",
+	    "marginBottom": "80px",
+	    "marginLeft": "0px",
+	    "paddingTop": "0px",
+	    "paddingRight": "80px",
+	    "paddingBottom": "0px",
+	    "paddingLeft": "80px"
+	  },
+	  ".introduce_detail": {
+	    "textAlign": "center",
+	    "flex": 1,
+	    "lineHeight": "50px",
+	    "color": "#888888"
 	  }
 	}
 
@@ -108,10 +165,20 @@
 
 	module.exports = function(module, exports, $app_require$){'use strict';
 	
+	var _system = $app_require$('@app-module/system.router');
+	
+	var _system2 = _interopRequireDefault(_system);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
 	module.exports = {
-	  data: function () {return {
-	    title: '直达服务'
-	  }}
+	    data: function () {return {
+	        list: {}
+	    }},
+	
+	    routePath: function routePath(path, params) {
+	        _system2.default.push({ uri: path, params: params });
+	    }
 	};}
 
 /***/ }
