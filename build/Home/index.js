@@ -43,13 +43,14 @@
 /******/ 	return __webpack_require__(0);
 /******/ })
 /************************************************************************/
-/******/ ([
-/* 0 */
+/******/ ({
+
+/***/ 0:
 /***/ function(module, exports, __webpack_require__) {
 
-	var $app_template$ = __webpack_require__(1)
-	var $app_style$ = __webpack_require__(2)
-	var $app_script$ = __webpack_require__(3)
+	var $app_template$ = __webpack_require__(13)
+	var $app_style$ = __webpack_require__(14)
+	var $app_script$ = __webpack_require__(15)
 	
 	$app_define$('@app-component/index', [], function($app_require$, $app_exports$, $app_module$){
 	     $app_script$($app_module$, $app_exports$, $app_require$)
@@ -64,7 +65,8 @@
 
 
 /***/ },
-/* 1 */
+
+/***/ 13:
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -107,10 +109,165 @@
 	                      },
 	                      "classList": [
 	                        "introduce_detail"
+	                      ]
+	                    }
+	                  ]
+	                },
+	                {
+	                  "type": "div",
+	                  "attr": {},
+	                  "classList": [
+	                    "item_container"
+	                  ],
+	                  "children": [
+	                    {
+	                      "type": "div",
+	                      "attr": {},
+	                      "classList": [
+	                        "item_title"
 	                      ],
-	                      "events": {
-	                        "click": function (evt) {this.routePath('caseList',{back:'false'},evt)}
-	                      }
+	                      "children": [
+	                        {
+	                          "type": "text",
+	                          "attr": {
+	                            "value": "基础组件"
+	                          },
+	                          "classList": function () {return ['item_title_detail', (this.list.compo_basic) + '_txt']},
+	                          "events": {
+	                            "click": function (evt) {this.select_conFn('compo_basic',evt)}
+	                          }
+	                        }
+	                      ]
+	                    },
+	                    {
+	                      "type": "div",
+	                      "attr": {},
+	                      "classList": function () {return ['item_content', this.list.compo_basic]},
+	                      "children": [
+	                        {
+	                          "type": "div",
+	                          "attr": {},
+	                          "classList": [
+	                            "item_li"
+	                          ],
+	                          "events": {
+	                            "click": function (evt) {this.detail('Component_A',evt)}
+	                          },
+	                          "children": [
+	                            {
+	                              "type": "text",
+	                              "attr": {
+	                                "value": "a"
+	                              },
+	                              "classList": [
+	                                "item_li_detail"
+	                              ]
+	                            },
+	                            {
+	                              "type": "image",
+	                              "attr": {
+	                                "src": "/Common/img/arrow_right.png"
+	                              },
+	                              "classList": [
+	                                "item_arrow_img"
+	                              ]
+	                            }
+	                          ]
+	                        },
+	                        {
+	                          "type": "div",
+	                          "attr": {},
+	                          "classList": [
+	                            "item_li"
+	                          ],
+	                          "events": {
+	                            "click": function (evt) {this.detail('Component_Div',evt)}
+	                          },
+	                          "children": [
+	                            {
+	                              "type": "text",
+	                              "attr": {
+	                                "value": "div"
+	                              },
+	                              "classList": [
+	                                "item_li_detail"
+	                              ]
+	                            },
+	                            {
+	                              "type": "image",
+	                              "attr": {
+	                                "src": "/Common/img/arrow_right.png",
+	                                "resizeMode": "contain"
+	                              },
+	                              "classList": [
+	                                "item_arrow_img"
+	                              ]
+	                            }
+	                          ]
+	                        },
+	                        {
+	                          "type": "div",
+	                          "attr": {},
+	                          "classList": [
+	                            "item_li"
+	                          ],
+	                          "events": {
+	                            "click": function (evt) {this.detail('Component_Input',evt)}
+	                          },
+	                          "children": [
+	                            {
+	                              "type": "text",
+	                              "attr": {
+	                                "value": "input"
+	                              },
+	                              "classList": [
+	                                "item_li_detail"
+	                              ]
+	                            },
+	                            {
+	                              "type": "image",
+	                              "attr": {
+	                                "src": "/Common/img/arrow_right.png",
+	                                "resizeMode": "contain"
+	                              },
+	                              "classList": [
+	                                "item_arrow_img"
+	                              ]
+	                            }
+	                          ]
+	                        },
+	                        {
+	                          "type": "div",
+	                          "attr": {},
+	                          "classList": [
+	                            "item_li"
+	                          ],
+	                          "events": {
+	                            "click": function (evt) {this.detail('Component_Image',evt)}
+	                          },
+	                          "children": [
+	                            {
+	                              "type": "text",
+	                              "attr": {
+	                                "value": "image"
+	                              },
+	                              "classList": [
+	                                "item_li_detail"
+	                              ]
+	                            },
+	                            {
+	                              "type": "image",
+	                              "attr": {
+	                                "src": "/Common/img/arrow_right.png",
+	                                "resizeMode": "contain"
+	                              },
+	                              "classList": [
+	                                "item_arrow_img"
+	                              ]
+	                            }
+	                          ]
+	                        }
+	                      ]
 	                    }
 	                  ]
 	                }
@@ -124,7 +281,8 @@
 	}
 
 /***/ },
-/* 2 */
+
+/***/ 14:
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -156,11 +314,63 @@
 	    "flex": 1,
 	    "lineHeight": "50px",
 	    "color": "#888888"
+	  },
+	  ".item_container": {
+	    "marginTop": "0px",
+	    "marginRight": "30px",
+	    "marginBottom": "30px",
+	    "marginLeft": "30px",
+	    "backgroundColor": "#ffffff",
+	    "flexDirection": "column"
+	  },
+	  ".item_title_detail": {
+	    "paddingTop": "40px",
+	    "paddingRight": "40px",
+	    "paddingBottom": "40px",
+	    "paddingLeft": "40px",
+	    "flex": 1,
+	    "color": "#000000"
+	  },
+	  ".item_content": {
+	    "flexDirection": "column",
+	    "paddingTop": "30px",
+	    "paddingRight": "30px",
+	    "paddingBottom": "30px",
+	    "paddingLeft": "30px",
+	    "display": "none"
+	  },
+	  ".item_li": {
+	    "borderTopColor": "#bbbbbb",
+	    "borderRightColor": "#bbbbbb",
+	    "borderBottomColor": "#bbbbbb",
+	    "borderLeftColor": "#bbbbbb",
+	    "borderBottomWidth": "1px",
+	    "alignItems": "center"
+	  },
+	  ".item_li_detail": {
+	    "paddingTop": "25px",
+	    "paddingRight": "0px",
+	    "paddingBottom": "25px",
+	    "paddingLeft": "0px",
+	    "color": "#000000",
+	    "flex": 1
+	  },
+	  ".item_arrow_img": {
+	    "height": "40px",
+	    "width": "20px",
+	    "marginRight": "30px"
+	  },
+	  ".show": {
+	    "display": "flex"
+	  },
+	  ".show_txt": {
+	    "color": "#cccccc"
 	  }
 	}
 
 /***/ },
-/* 3 */
+
+/***/ 15:
 /***/ function(module, exports) {
 
 	module.exports = function(module, exports, $app_require$){'use strict';
@@ -173,16 +383,42 @@
 	
 	module.exports = {
 	    data: function () {return {
-	        list: {}
+	        list: {
+	            compo_basic: ''
+	        }
 	    }},
 	
 	    routePath: function routePath(path, params) {
 	        _system2.default.push({ uri: path, params: params });
+	    },
+	
+	
+	    activeF: function activeF(list, target, addClass) {
+	        var obj = list;
+	        if (obj[target] == addClass) {
+	            obj[target] = '';
+	            return;
+	        }
+	        for (var key in obj) {
+	            obj[key] = '';
+	            if (target == key) {
+	                obj[key] = addClass;
+	            }
+	        }
+	    },
+	
+	    select_conFn: function select_conFn(target) {
+	        this.activeF(this['list'], target, 'show');
+	    },
+	
+	    detail: function detail(src) {
+	        _system2.default.push({ "uri": src });
 	    }
 	};}
 
 /***/ }
-/******/ ]);
+
+/******/ });
   };
   if (typeof window === "undefined") {
     return createPageHandler();

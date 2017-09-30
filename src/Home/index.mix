@@ -10,10 +10,25 @@
                     </div>
                     <div class="item_container">
                         <div class="item_title">
-                            <text class="item_title_detail {{list.compo_view}}_txt" onclick="select_conFn('compo_basic')">基础组件</text>
+                            <text class="item_title_detail {{list.compo_basic}}_txt" onclick="select_conFn('compo_basic')">基础组件</text>
                         </div>
                         <div class="item_content {{list.compo_basic}}">
-                            <div class="item_li"></div>
+                            <div class="item_li" onclick="detail('Component_A')">
+                                <text class="item_li_detail">a</text>
+                                <image class="item_arrow_img" src="/Common/img/arrow_right.png" ></image>
+                            </div>
+                            <div class="item_li" onclick="detail('Component_Div')">
+                                <text class="item_li_detail">div</text>
+                                <image class="item_arrow_img" src="/Common/img/arrow_right.png" resize-mode="contain"></image>
+                            </div>
+                            <div class="item_li" onclick="detail('Component_Input')">
+                                <text class="item_li_detail">input</text>
+                                <image class="item_arrow_img" src="/Common/img/arrow_right.png" resize-mode="contain"></image>
+                            </div>
+                            <div class="item_li" onclick="detail('Component_Image')">
+                                <text class="item_li_detail">image</text>
+                                <image class="item_arrow_img" src="/Common/img/arrow_right.png" resize-mode="contain"></image>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -44,9 +59,46 @@
         text-align: center;
         flex: 1;
         line-height: 50px;
-        color: #888;
+        color: #888888;
     }
 
+    .item_container{
+        margin:0 30px 30px;
+        background-color: #ffffff;
+        flex-direction: column;
+    }
+    .item_title_detail{
+        padding: 40px;
+        flex:1;
+        color: #000000;
+    }
+    .item_content{
+        flex-direction: column;
+        padding: 30px;
+        display: none;
+    }
+    .item_li{
+        border-color: #bbbbbb;
+        border-bottom-width: 1px;
+        align-items: center;
+    }
+    .item_li_detail{
+        padding: 25px 0;
+        color: #000000;
+        flex:1;
+    }
+    .item_arrow_img{
+        height: 40px;
+        width: 20px;
+        margin-right: 30px;
+    }
+
+    .show{
+        display: flex;
+    }
+    .show_txt{
+        color: #cccccc;
+    }
 </style>
 
 <script>
@@ -55,12 +107,34 @@
     module.exports = {
         data:{
             list:{
-
+                compo_basic:'',
             }
         },
 
         routePath (path,params) {
             router.push({uri:path,params:params})
+        },
+
+        activeF:function (list,target,addClass) {
+            var obj = list;
+            if(obj[target] == addClass){
+                obj[target] = '';
+                return;
+            }
+            for(var key in obj){
+                obj[key] = '';
+                if(target == key){
+                    obj[key] = addClass;
+                }
+            }
+        },
+
+        select_conFn: function (target) {
+            this.activeF(this['list'],target,'show');
+        },
+
+        detail:function (src) {
+            router.push({"uri":src});
         }
     }
 

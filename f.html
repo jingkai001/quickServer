@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            display: flex;
+            align-items: center;
+            border:1px solid #ccc;
+        }
+        span{
+            padding:25px 0;
+            color: #000;
+            flex: 1;
+        }
+        img{
+            height: 40px;
+            width: 20px;
+            margin-right: 30px;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <span>fd</span>
+    <img src="./src/Common/img/arrow_right.png" alt="">
+</div>
+</body>
+
+<script>
+    class Query{
+        constructor(prefix, baseUrl){
+
+            this.prefix = prefix;
+            if(!prefix.endsWith('/')){
+                this.prefix =prefix+'/';
+            }
+            if(prefix.startsWith('/')){
+                this.prefix = this.prefix.slice(1);
+            }
+
+            this._responseFilter = res =>res;
+            this._errFilter = err=>{
+                Promise.reject(err);
+            }
+
+            this.baseUrl = baseUrl || BASE_URL;
+            if(!this.baseUrl.endsWith('/')){
+                this.baseUrl += '/'
+            }
+        }
+
+        _urlGenerator(method){
+            return this.baseUrl + this.prefix + method;
+        }
+
+        setResponseFilter(filter){
+            if(typeof filter === "function"){
+                this._responseFilter = filter
+            }
+        }
+
+        setErrFilter(filter){
+            if(typeof filter === "function"){
+                this._errFilter = filter
+            }
+        }
+
+        get(method, data){
+            const url = this._urlGenerator(method);
+            return this._request("GET",url, data);
+        }
+
+        post(method, data){
+            const url = this._urlGenerator(method);
+            return this._request("POST",url, data);
+        }
+
+        _request(queryMethod, url, data){
+            return new Promise((resolve, reject) =>{
+                fetch.fetch({
+                    url,
+                    data:data||{},
+                    method: queryMethod,
+                    success:function(data){
+                        if(code === '0000'){
+                            resolve(data)
+                        }
+                    },
+                    fail:function(data, code){
+                        reject(data);
+                    }
+                })
+            }).then(this._responseFilter).catch(this._errFilter);
+        }
+    }
+
+
+
+</script>
+</html>
