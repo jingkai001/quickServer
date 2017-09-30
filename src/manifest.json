@@ -5,7 +5,8 @@
   "versionCode": "1",
   "icon": "/Common/logo.png",
   "features": [
-    { "name": "system.fetch" }
+    { "name": "system.fetch" },
+    { "name": "system.prompt" }
   ],
   "permissions": [
     { "origin": "*" }
@@ -18,6 +19,18 @@
     "pages": {
       "Home": {
         "component": "index"
+      },
+      "Component_A":{
+        "component":"index"
+      },
+      "Component_Div":{
+        "component":"index"
+      },
+      "Component_Input":{
+        "component":"index"
+      },
+      "Component_Image":{
+        "component":"index"
       }
     }
   },
@@ -29,6 +42,18 @@
     "pages": {
       "Home": {
         "titleBarText": "新应用组件展示"
+      },
+      "Component_A":{
+        "titleBarText": "A"
+      },
+      "Component_Div":{
+        "titleBarText":"Div"
+      },
+      "Component_Input":{
+        "titleBarText":"Input"
+      },
+      "Component_Image":{
+        "titleBarText":"Image"
       }
     }
   }
