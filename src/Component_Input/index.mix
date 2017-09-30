@@ -81,6 +81,16 @@
             <text class="input-hint">控制占位符颜色的input</text>
             <input class="input-text" type="text" placeholder="占位符字体是红色的" placeholder-color="#FF0000">
         </div>
+
+        <div class="input-item">
+            <text class="input-hint">获取用户信息</text>
+            <input type="button" value="获取" onclick="getAccountInfo">
+        </div>
+
+        <div class="input-item">
+            <text class="input-hint">调用登录小米账号页面</text>
+            <input type="button" value="登录接口" onclick="addAccountInfo">
+        </div>
     </div>
 </template>
 
@@ -140,7 +150,8 @@
 </style>
 
 <script>
-    import prompt from '@system.prompt'
+    import prompt from '@system.prompt';
+    import account from '@service.internal.account'
 
     export default {
         data:{
@@ -170,6 +181,24 @@
         showClickPrompt(msg){
             prompt.showToast({
                 message:msg
+            })
+        },
+
+
+        getAccountInfo(){
+            console.log(JSON.stringify(account.getAccount()));
+        },
+
+        addAccountInfo(){
+            account.addAccount({
+                success:function (res) {
+                    prompt.showToast({
+                        message:res.userId,
+                    })
+                },
+                fail:function (e) {
+                    console.log(e)
+                }
             })
         }
     }

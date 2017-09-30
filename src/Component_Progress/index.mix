@@ -1,0 +1,101 @@
+<template>
+    <div class="container">
+        <div class="nav_title">
+            <text class="nav_title_detail">{{component_name}}</text>
+        </div>
+
+        <div class="item_container">
+            <div class="item_content">
+                <text class="item_title">10%（默认：颜色#33b4ff，高度32px）</text>
+                <progress class="progress" percent="10"></progress>
+            </div>
+            <div class="item_content">
+                <text class="item_title">20%（默认：颜色#33b4ff，高度32px）</text>
+                <progress class="progress" color="#09ba07" percent="20" stroke-width="10"></progress>
+            </div>
+            <div class="item_content">
+                <text class="item_title">40%（默认：颜色#33b4ff，高度32px）</text>
+                <progress class="progress" color="#0faeff" percent="40" stroke-width="10"></progress>
+            </div>
+            <div class="item_content">
+                <text class="item_title">60%（默认：颜色#33b4ff，高度32px）</text>
+                <progress class="progress" color="#a020f0" percent="60" stroke-width="10"></progress>
+            </div>
+            <div class="item_content">
+                <text class="item_title">80%（默认：颜色#33b4ff，高度32px）</text>
+                <progress class="progress" color="#f76160" percent="80" stroke-width="10"></progress>
+            </div>
+
+
+            <div class="item_content_circular">
+                <text class="item_title">默认：宽度高度32px</text>
+                <progress class="circular circular_0" color="#09ba07" type="circular"></progress>
+            </div>
+            <div class="item_content_circular">
+                <text class="item_title">高度40px</text>
+                <progress class="circular circular_1" color="#09ba07" type="circular"></progress>
+            </div>
+            <div class="item_content_circular">
+                <text class="item_title">高度60px</text>
+                <progress class="circular circular_2" color="#0faeff" type="circular"></progress>
+            </div>
+            <div class="item_content_circular">
+                <text class="item_title">高度80px</text>
+                <progress class="circular circular_3" color="#a020f0" type="circular"></progress>
+            </div>
+            <div class="item_content_circular">
+                <text class="item_title">高度100px</text>
+                <progress class="circular circular_4" color="#f76160" type="circular"></progress>
+            </div>
+        </div>
+    </div>
+</template>
+
+<style>
+    @import "../Common/css/common.css";
+
+    .item_container{
+        margin:0 60px 50px;
+        flex-direction: column;
+    }
+    .item_content{
+        margin-bottom: 60px;
+        flex-direction: column;
+    }
+    .item_content_circular{
+        margin-bottom: 60px;
+        flex-direction: column;
+        align-items: center;
+    }
+    .progress{
+        flex:1;
+        padding: 20px;
+    }
+    .item_title{
+        text-align:center
+    }
+    .circular_1 {
+        width: 40px;
+        height: 40px;
+    }
+    .circular_2 {
+        width: 60px;
+        height: 60px;
+    }
+    .circular_3 {
+        width: 80px;
+        height: 80px;
+    }
+    .circular_4 {
+        width: 100px;
+        height: 100px;
+    }
+</style>
+
+<script>
+    export default{
+        data:{
+            component_name:'progress'
+        }
+    }
+</script>

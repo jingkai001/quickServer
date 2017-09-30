@@ -10,6 +10,12 @@
     },
     {
       "name": "system.prompt"
+    },
+    {
+      "name": "server.internal.account"
+    },
+    {
+      "name": "service.internal.account"
     }
   ],
   "permissions": [
@@ -37,6 +43,9 @@
       },
       "Component_Image": {
         "component": "index"
+      },
+      "Component_Progress": {
+        "component": "index"
       }
     }
   },
@@ -60,6 +69,9 @@
       },
       "Component_Image": {
         "titleBarText": "Image"
+      },
+      "Component_Progress": {
+        "titleBarText": "Progress"
       }
     }
   }

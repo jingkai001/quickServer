@@ -48,9 +48,9 @@
 /***/ 0:
 /***/ function(module, exports, __webpack_require__) {
 
-	var $app_template$ = __webpack_require__(13)
-	var $app_style$ = __webpack_require__(14)
-	var $app_script$ = __webpack_require__(15)
+	var $app_template$ = __webpack_require__(16)
+	var $app_style$ = __webpack_require__(17)
+	var $app_script$ = __webpack_require__(18)
 	
 	$app_define$('@app-component/index', [], function($app_require$, $app_exports$, $app_module$){
 	     $app_script$($app_module$, $app_exports$, $app_require$)
@@ -66,7 +66,7 @@
 
 /***/ },
 
-/***/ 13:
+/***/ 16:
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -266,6 +266,37 @@
 	                              ]
 	                            }
 	                          ]
+	                        },
+	                        {
+	                          "type": "div",
+	                          "attr": {},
+	                          "classList": [
+	                            "item_li"
+	                          ],
+	                          "events": {
+	                            "click": function (evt) {this.detail('Component_Progress',evt)}
+	                          },
+	                          "children": [
+	                            {
+	                              "type": "text",
+	                              "attr": {
+	                                "value": "progress"
+	                              },
+	                              "classList": [
+	                                "item_li_detail"
+	                              ]
+	                            },
+	                            {
+	                              "type": "image",
+	                              "attr": {
+	                                "src": "/Common/img/arrow_right.png",
+	                                "resizeMode": "contain"
+	                              },
+	                              "classList": [
+	                                "item_arrow_img"
+	                              ]
+	                            }
+	                          ]
 	                        }
 	                      ]
 	                    }
@@ -282,7 +313,7 @@
 
 /***/ },
 
-/***/ 14:
+/***/ 17:
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -370,7 +401,7 @@
 
 /***/ },
 
-/***/ 15:
+/***/ 18:
 /***/ function(module, exports) {
 
 	module.exports = function(module, exports, $app_require$){'use strict';

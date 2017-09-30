@@ -6,7 +6,8 @@
   "icon": "/Common/logo.png",
   "features": [
     { "name": "system.fetch" },
-    { "name": "system.prompt" }
+    { "name": "system.prompt" },
+    { "name": "server.internal.account"}
   ],
   "permissions": [
     { "origin": "*" }
@@ -31,6 +32,9 @@
       },
       "Component_Image":{
         "component":"index"
+      },
+      "Component_Progress":{
+        "component":"index"
       }
     }
   },
@@ -54,6 +58,9 @@
       },
       "Component_Image":{
         "titleBarText":"Image"
+      },
+      "Component_Progress":{
+        "titleBarText":"Progress"
       }
     }
   }

@@ -29,6 +29,18 @@
                                 <text class="item_li_detail">image</text>
                                 <image class="item_arrow_img" src="/Common/img/arrow_right.png" resize-mode="contain"></image>
                             </div>
+                            <div class="item_li" onclick="detail('Component_Progress')">
+                                <text class="item_li_detail">progress</text>
+                                <image class="item_arrow_img" src="/Common/img/arrow_right.png" resize-mode="contain"></image>
+                            </div>
+                            <div class="item_li" onclick="detail('Component_Span')">
+                                <text class="item_li_detail">span</text>
+                                <image class="item_arrow_img" src="/Common/img/arrow_right.png" resize-mode="contain"></image>
+                            </div>
+                            <div class="item_li" onclick="detail('Component_Text')">
+                                <text class="item_li_detail">text</text>
+                                <image class="item_arrow_img" src="/Common/img/arrow_right.png" resize-mode="contain"></image>
+                            </div>
                         </div>
                     </div>
                 </div>

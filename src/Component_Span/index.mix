@@ -1,0 +1,24 @@
+<template>
+    <div class="container">
+        <div class="nav_title">
+            <text class="nav_title_detail"></text>
+        </div>
+
+        <div class="item_container">
+            <text class="item_title">作为text的子组件</text>
+            <text>
+                <span>I am a span,</span>
+                <span style="color: #f76160; text-decoration: underline">I am a span，</span>
+                <span style="color: #f76160; text-decoration: line-through">I am a span,</span>
+                <span style="color: #f76160; "></span>
+            </text>
+        </div>
+    </div>
+</template>
+
+<style>
+</style>
+
+<script>
+
+</script>

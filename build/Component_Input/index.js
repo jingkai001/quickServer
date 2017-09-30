@@ -652,6 +652,62 @@
 	          ]
 	        }
 	      ]
+	    },
+	    {
+	      "type": "div",
+	      "attr": {},
+	      "classList": [
+	        "input-item"
+	      ],
+	      "children": [
+	        {
+	          "type": "text",
+	          "attr": {
+	            "value": "获取用户信息"
+	          },
+	          "classList": [
+	            "input-hint"
+	          ]
+	        },
+	        {
+	          "type": "input",
+	          "attr": {
+	            "type": "button",
+	            "value": "获取"
+	          },
+	          "events": {
+	            "click": "getAccountInfo"
+	          }
+	        }
+	      ]
+	    },
+	    {
+	      "type": "div",
+	      "attr": {},
+	      "classList": [
+	        "input-item"
+	      ],
+	      "children": [
+	        {
+	          "type": "text",
+	          "attr": {
+	            "value": "调用登录小米账号页面"
+	          },
+	          "classList": [
+	            "input-hint"
+	          ]
+	        },
+	        {
+	          "type": "input",
+	          "attr": {
+	            "type": "button",
+	            "value": "登录接口"
+	          },
+	          "events": {
+	            "click": "addAccountInfo"
+	          }
+	        }
+	      ]
 	    }
 	  ]
 	}
@@ -765,6 +821,10 @@
 	
 	var _system2 = _interopRequireDefault(_system);
 	
+	var _serviceInternal = $app_require$('@app-module/service.internal.account');
+	
+	var _serviceInternal2 = _interopRequireDefault(_serviceInternal);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	exports.default = {
@@ -790,6 +850,21 @@
 	    showClickPrompt: function showClickPrompt(msg) {
 	        _system2.default.showToast({
 	            message: msg
+	        });
+	    },
+	    getAccountInfo: function getAccountInfo() {
+	        console.log(JSON.stringify(_serviceInternal2.default.getAccount()));
+	    },
+	    addAccountInfo: function addAccountInfo() {
+	        _serviceInternal2.default.addAccount({
+	            success: function success(res) {
+	                _system2.default.showToast({
+	                    message: res.userId
+	                });
+	            },
+	            fail: function fail(e) {
+	                console.log(e);
+	            }
 	        });
 	    }
 	};}
