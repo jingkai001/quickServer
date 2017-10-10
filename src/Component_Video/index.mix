@@ -1,0 +1,43 @@
+<template>
+    <div class="container">
+        <div class="nav_title">
+            <text class="nav_title_detail">{{component_name}}</text>
+        </div>
+
+        <div class="item_container">
+            <text class="item_title">播放MP4格式</text>
+            <div class="item_content">
+                <video src="http://v.120askimages.com/video/video_39407.mp4" class="video"></video>
+            </div>
+        </div>
+    </div>
+</template>
+
+<style>
+    @import '../Common/css/common.css';
+
+    .item_container{
+        margin: 40px 0;
+        flex-direction: column;
+    }
+    .item_title{
+        padding:0 30px 20px 0;
+    }
+    .item_content{
+        height: 250px;
+        justify-content: center;
+    }
+    .video{
+        width: 400px;
+        height: 300px;
+    }
+</style>
+
+<script>
+    export default {
+        data:{
+            component_name:'video'
+        }
+    }
+
+</script>

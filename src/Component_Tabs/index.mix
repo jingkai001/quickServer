@@ -1,0 +1,208 @@
+<template>
+    <div class="container">
+        <div class="nav_title">
+            <text class="nav_title_detail">{{component_name}}</text>
+        </div>
+
+        <tabs class="tabs" onchange="changeTabactive" index="2">
+            <tab-bar class="tab_bar">
+                <text class="tab_text">基础组件</text>
+                <text class="tab_text">表单组件</text>
+                <text class="tab_text">列表组件</text>
+            </tab-bar>
+
+            <tab-content class="tab_content">
+                <!--基础组件-->
+                <div class="item_container">
+                    <div class="item_content">
+                        <text class="item_title item_title_first">a</text>
+                        <a href="http://www.mi.com" style="color: #09ba07;">小米官网</a>
+                    </div>
+
+                    <div class="item_content">
+                        <text class="item_title">image</text>
+                        <image src="/Common/img/xmad.jpg" class="image"></image>
+                    </div>
+
+                    <div class="item_content">
+                        <text class="item_title">progress type="horizontal"</text>
+                        <progress color="#0faeff" percent="20" stroke-width="10" style="margin-top: 20px;"></progress>
+                    </div>
+
+                    <div class="item_content">
+                        <text class="item_title">progress type="circular"</text>
+                        <progress class="circular" color="#A020F0" type="circular" style="margin-top: 20px;"></progress>
+                    </div>
+
+                    <div class="item_content">
+                        <text class="item_title">text</text>
+                        <text style="color: #f76160;">I am a text</text>
+                    </div>
+
+                    <div class="item_content">
+                        <text class="item_title">span</text>
+                        <text>
+                            <span style="color: #09ba07;">I am a span</span>
+                        </text>
+                    </div>
+                </div>
+
+                <!--表单组件-->
+                <div class="item_container">
+                    <div class="item_content">
+                        <text class="item_title item_title_first">input</text>
+                        <input type="text" class="item_input" placeholder="I am an input">
+                    </div>
+
+                    <!--picker：type分为text、date、time，对应onchange事件的事件对象为{newValue,newSelected}、{year,month,day}、{hour,minute}-->
+                    <div class="item_content">
+                        <text class="item_title">picker</text>
+                        <picker class="item_picker" type="time" value="{{time}}" onchange="setTime"></picker>
+                    </div>
+
+                    <div class="item_content">
+                        <text class="item_title">slider</text>
+                        <slider class="item_slider" selected-color="#0faeff" min="50" max="200" value="100" enable="true"></slider>
+                    </div>
+                </div>
+
+                <!--列表组件-->
+                <div class="item_container">
+                    <input type="button" class="button" name="" value="切换滚动模式" onclick="switchScrollMode">
+                    <input type="button" class="button" name="" value="回到第一个item" onclick="goIndex">
+                    <list class="list" onscrollbottom="scrollbottom" id="list" scrollpage="{{scrollPage}}">
+                        <list-item type="listItem" class="item item_color" for="{{list_data}}">
+                            <text class="txt">{{$item.name}}--{{$idx}}</text>
+                        </list-item>
+                        <list-item type="loadMore" class="load_more" if="{{loadMore}}">
+                            <progress type="circular"></progress>
+                            <text>加载更多</text>
+                        </list-item>
+                    </list>
+                </div>
+            </tab-content>
+        </tabs>
+    </div>
+</template>
+
+<style>
+    @import '../Common/css/common.css';
+    .tabs{
+        flex: 1;
+        margin: 20px 30px 0;
+        background-color: #ffffff;
+    }
+    .tab_content{
+        flex: 1;
+    }
+    .tab_bar{
+        height: 100px;
+        border-color: #bbbbbb;
+        color: #bbbbbb;
+        border-bottom-width: 1px;
+    }
+    .tab_text{
+        text-align: center;
+    }
+    .tab_text:active{
+        color: #f76160;
+    }
+    .item_container{
+        padding: 30px 30px 0;
+        flex-direction: column;
+    }
+    .item_content{
+        flex-direction: column;
+        padding-bottom: 30px;
+    }
+    .item_title{
+        padding-top: 50px;
+        padding-bottom: 20px;
+        color: #aaaaaa;
+    }
+    .item_title_first{
+        padding-top: 0px;
+    }
+    .item_input{
+        height: 80px;
+        margin: 0 60px;
+        padding: 20px;
+        border-width: 1px;
+        border-color: #bbbbbb;
+        border-radius: 5px;
+        font-size: 30px;
+    }
+    .item_picker{
+        margin:0 60px;
+        padding: 20px;
+        border-width: 1px;
+        border-color: #bbbbbb;
+        border-radius: 5px;
+    }
+    .item_slider{
+        padding: 20px;
+    }
+    .circular{
+        width: 40px;
+        height: 40px;
+    }
+    .list{
+        flex: 1;
+    }
+    .load_more{
+        justify-content: center;
+        align-items: center;
+        height: 100px;
+    }
+    .button{
+        height: 80px;
+        color: #ffffff;
+        text-align: center;
+        border-radius: 5px;
+        margin: 0 60px 50px;
+        background-color: #0faeff;
+    }
+    .item{
+        height: 150px;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 15px;
+    }
+    .item_color{
+        background-color: #f76160;
+    }
+</style>
+
+<script>
+    export default {
+        data: {
+            component_name: "tabs",
+            time: '',
+            loadMore: true,
+            scrollPage: false,
+            list_data: [{name: "A"},{name: "B"},{name:"C"},{name:"D"}]
+        },
+        onInit: function () {
+            this.time = new Date().getHours() + ":" + new Date().getMinutes();
+        },
+        changeTabactive: function (e) {
+            console.log('-----------切换tab：'+e.index);
+        },
+        setTime: function (e) {
+            this.time = e.hour + ":" + e.minute;
+        },
+        goIndex: function () {
+            this.$element('list').scrollTo({ index:0, smooth: true, })
+        },
+        switchScrollMode: function () {
+            this.goIndex();
+            this.scrollPage= !this.scrollPage;
+        },
+        scrollbottom: function (e) {
+            var that = this;
+            setTimeout(function () {
+                that.list_data = that.list_data.concat([{name: "A"},{name: "B"},{name: "C"},{name: "D"}]);
+            },1000);
+        }
+    }
+</script>

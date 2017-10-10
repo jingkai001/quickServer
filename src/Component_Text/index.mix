@@ -1,0 +1,55 @@
+<template>
+    <div class="container">
+        <div class="nav_title">
+            <div class="nav_title_detail"></div>
+        </div>
+
+        <div class="item_container">
+            <text class="item_title">在text中span的多种表现形式</text>
+            <text class="txt">
+                <span style="color: #09ba07;">小米官网</span>
+                <span style="color: #0faeff; text-decoration: underline">小米官网</span>
+                <span style="color: #f76160; text-decoration: line-through">小米官网</span>
+            </text>
+
+            <text class="item_title">在text中a的多种表现形式</text>
+            <text class="txt">
+                <a href="http://www.mi.com/" value="小米官网" style="color: #09ba07;"></a>
+                <a href="http://www.mi.com/" value="小米官网" style="color: #0faeff; text-decoration: underline"></a>
+                <a href="http://www.mi.com/" value="小米官网" style="color: #f76160; text-decoration: line-through"></a>
+            </text>
+
+            <text class="item_title">lines：默认值-1</text>
+            <text class="txt">{{loneText}}</text>
+
+            <text class="item_title">lines：设置为3； text-overflow: clip</text>
+            <text class="txt" style="lines: 3; text-overflow: clip">{{loneText}}</text>
+
+            <text class="item_title">lines：设置为3； text-overflow: ellipsis</text>
+            <text class="txt" style="lines: 3; text-overflow: ellipsis">{{loneText}}</text>
+
+            <text class="item_title">line-height: 设置为50px</text>
+            <text class="txt" style="line-height: 50px;">{{loneText}}</text>
+        </div>
+    </div>
+</template>
+
+<style>
+    .item_container{
+        margin:0 60px 50px;
+        flex-direction: column;
+    }
+    .item_title{
+        padding: 50px 0 20px;
+        color: #aaaaaa;
+    }
+</style>
+
+<script>
+    export default{
+        data:{
+            component_name:'text',
+            loneText:'本框架是一套以前端开发技术栈为主进行应用开发的框架，采用流行的前端开发模式，贴合主流前端开发者的思维习惯，同时大幅提升应用的性能，提供大量前端环境无法使用的系统能力，以及很多第三方服务的对接能力。'
+        }
+    }
+</script>

@@ -1,24 +1,72 @@
 <template>
     <div class="container">
         <div class="nav_title">
-            <text class="nav_title_detail"></text>
+            <text class="nav_title_detail">{{component_name}}</text>
         </div>
 
+        <!--span只能作为text或a的子组件，不能作为div等其他的子组件！-->
         <div class="item_container">
             <text class="item_title">作为text的子组件</text>
             <text>
                 <span>I am a span,</span>
                 <span style="color: #f76160; text-decoration: underline">I am a span，</span>
                 <span style="color: #f76160; text-decoration: line-through">I am a span,</span>
-                <span style="color: #f76160; "></span>
+                <span style="color: #f76160; font-style: italic">I am a span,</span>
+                <span style="color: #f76160; font-weight: bold">I am a span,</span>
+                <span style="color: #f76160; font-size: 50px">I am a span,</span>
             </text>
+
+            <text class="item_title">作为text的子组件：给text设置样式</text>
+            <text style="lines: 1; text-overflow: ellipsis; color: #09ba07;">
+                <span>I am a span</span>
+                <span style="color: #f76160; text-decoration: underline;">I am a span</span>
+                <span style="color: #f76160; text-decoration: line-through;">I am a span</span>
+                <span style="color: #f76160; font-style: italic;">I am a span</span>
+                <span style="color: #f76160; font-weight: bold;">I am a span</span>
+                <span style="color: #f76160; font-size: 50px;">I am a span</span>
+            </text>
+
+            <text class="item_title">作为a的子组件</text>
+            <a href="http://www.mi.com/" value="小米官网">
+                <span>I am a span</span>
+                <span style="color: #0faeff; text-decoration: underline;">I am a span</span>
+                <span style="color: #0faeff; text-decoration: line-through;">I am a span</span>
+                <span style="color: #0faeff; font-style: italic;">I am a span</span>
+                <span style="color: #0faeff; font-weight: bold;">I am a span</span>
+                <span style="color: #0faeff; font-size: 50px;">I am a span</span>
+            </a>
+
+            <text class="item_title">作为a的子组件：给a设置样式</text>
+            <a href="http://www.mi.com/" value="小米官网" style="lines:1; text-overflow: ellipsis; color: #09ba07">
+                <span>I am a span</span>
+                <span style="color: #0faeff; text-decoration: underline;">I am a span</span>
+                <span style="color: #0faeff; text-decoration: line-through;">I am a span</span>
+                <span style="color: #0faeff; font-style: italic;">I am a span</span>
+                <span style="color: #0faeff; font-weight: bold;">I am a span</span>
+                <span style="color: #0faeff; font-size: 50px;">I am a span</span>
+            </a>
         </div>
     </div>
 </template>
 
 <style>
+    @import '../Common/css/common.css';
+
+    .item_container{
+        margin:0 60px 50px;
+        flex-direction: column;
+    }
+
+    .item_title{
+        padding:50px 0 20px;
+        color: #aaaaaa;
+    }
 </style>
 
 <script>
-
+    export default {
+        data:{
+            component_name:'span'
+        }
+    }
 </script>

@@ -1,0 +1,62 @@
+<template>
+    <div class="container">
+        <div class="nav_title">
+            <text class="nav_title_detail">{{component_name}}</text>
+        </div>
+
+        <div class="item-container">
+            <input type="button" class="btn-blue" onclick="changeType" value="change the type of richtext">
+        </div>
+
+        <div class="item-container" show="{{ type == 'mix' }}">
+            <text class="item-hint" style="color: #0faeff;">richtext type=mix</text>
+            <text class="item-hint">mix类型的富文本的value，支持开发文档中组件的静态显示（richtext除外）</text>
+            <richtext type="mix" class="rich-text">{{mix_text}}</richtext>
+        </div>
+
+        <div class="item-container" show="{{ type == 'html' }}">
+            <text class="item-hint" style="color: #0faeff;">richtext type=html</text>
+            <text class="item-hint">html类型的富文本的value，最外层必须用开发文档中html支持的块级元素包裹起来</text>
+            <richtext type="html" class="rich-text">{{html_text}}</richtext>
+        </div>
+    </div>
+</template>
+
+<style>
+    @import '../Common/css/common.css';
+
+    .item-container{
+        margin: 0 30px 30px;
+        flex-direction: column;
+    }
+    .btn-blue{
+        color: #ffffff;
+        background-color: #0faeff;
+    }
+    .item-hint{
+        height: 100px;
+    }
+    .rich-text{
+        padding: 30px;
+        background-color: #ffffff;
+    }
+
+</style>
+
+<script>
+    export default {
+        data:{
+            component_name:'richtext',
+            type: 'mix',
+            mix_text: '<div class="item_content"><text class="item_title">a</text><a href="http://www.mi.com/" value="小米官网" style="color: #09ba07;text-decoration: underline"></a><text class="item_title">image</text><image src="http://i3.mifile.cn/a4/xmad_14871524557389_mLCGc.jpg" style="resize-mode: contain; border-style: dotted; border-width: 1px; border-color: #0faeff;"></image><text class="item_title">progress</text><progress color="#0faeff" percent="20" style="stroke-width: 10px;"></progress><progress color="#0faeff" type="circular" style="width: 50px; height: 50px;margin-top: 30px;"></progress><text class="item_title">text</text><text style="color: #f76160;">小米官网</text></div>',
+            html_text: '<div class="item_content"><p class="item_title">h1</p><h1>小米官网</h1><p class="item_title">h2</p><h2>小米官网</h2><p class="item_title">h3</p><h3>小米官网</h3><p class="item_title">h4</p><h4>小米官网</h4><p class="item_title">h5</p><h5>小米官网</h5><p class="item_title">h6</p><h6>小米官网</h6><p class="item_title">a</p><div><a href="http://www.mi.com/" style="color: #09ba07;text-decoration: underline">小米官网</a></div><p class="item_title">img</p><div><img src="http://i3.mifile.cn/a4/xmad_14871524557389_mLCGc.jpg" style="width: 100%;"/></div><p class="item_title">p</p><p>小米官网</p><p class="item_title">span</p><p><span>小米官网</span></p><p class="item_title">strong</p><p><strong>小米官网</strong></p><p class="item_title">del</p><p><del>小米官网</del></p><p class="item_title">b</p><p><b>小米官网</b></p><p class="item_title">i</p><p><i>小米官网</i></p></div>'
+        },
+        changeType: function () {
+            if(this.type == 'mix'){
+                this.type = 'html';
+            }else {
+                this.type = 'mix';
+            }
+        }
+    }
+</script>

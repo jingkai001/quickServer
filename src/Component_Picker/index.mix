@@ -1,0 +1,105 @@
+<template>
+    <div class="container">
+        <div class="nav_title">
+            <text class="nav_title_detail">{{component_name}}</text>
+        </div>
+
+        <!--type:text，默认type即为text，range属性为选择器的取值范围-->
+        <div class="item_container">
+            <text class="item_title">地区选择器</text>
+            <div class="item_content">
+                <text class="label">当前选择</text>
+                <picker class="picker" type="text" range="{{list}}" value="{{country}}" onchange="get_country" id="picker"></picker>
+            </div>
+        </div>
+
+        <!--type:time-->
+        <div class="item_container">
+            <text class="item_title">时间选择器</text>
+            <div class="item_content">
+                <text class="label">当前选择</text>
+                <picker class="picker" type="time" value="{{time}}" onchange="get_time"></picker>
+            </div>
+        </div>
+
+        <!--type:date-->
+        <div class="item_container">
+            <text class="item_title">日期选择器</text>
+            <div class="item_content">
+                <text class="label">当前选择</text>
+                <picker class="picker" type="date" value="{{date}}" onchange="get_date"></picker>
+            </div>
+        </div>
+
+        <input type="button" name="" class="button" value="通过代码调取地区选择器" onclick="show">
+    </div>
+</template>
+
+<style>
+    @import '../Common/css/common.css';
+    .item_container{
+        margin-top: 20px;
+        flex-direction: column;
+    }
+    .item_title{
+        padding: 30px 0 30px 30px;
+        border-bottom-width: 1px;
+        border-color: #bbbbbb;
+        color: #aaaaaa;
+    }
+    .item_content{
+        background-color: #ffffff;
+        border-bottom-width: 1px;
+        border-color: #bbbbbb;
+        padding:0 30px;
+    }
+    .picker{
+        flex: 1;
+    }
+    .label{
+        padding: 30px 100px 30px 0;
+    }
+    .button{
+        margin: 50px 60px;
+        height: 80px;
+        text-align: center;
+        border-radius: 5px;
+        color: #ffffff;
+        background-color: #0faeff;
+    }
+
+</style>
+
+<script>
+    export default {
+        data:{
+            component_name:'picker',
+            list:['中国','美国','日本','韩国'],
+            country:'中国',
+            time: '',
+            date: '',
+        },
+        onInit: function () {
+            let date = new Date();
+            let Y = date.getFullYear();
+            let M = date.getMonth()+1;
+            let D = date.getDate();
+            let H = date.getHours();
+            let m = date.getMinutes();
+            this.date = Y+'-'+M+'-'+D;
+            this.time = H+':'+m;
+        },
+        get_country: function (e) {
+            this.country = e.newValue;
+        },
+        get_date: function (e) {
+            this.date = e.year+'-'+(e.month+1)+'-'+e.day;
+        },
+        get_time: function (e) {
+            this.time = e.hour+':'+e.minute;
+        },
+        show: function () {
+            this.$element('picker').show();
+        }
+    }
+</script>

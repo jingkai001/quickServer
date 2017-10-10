@@ -46,13 +46,61 @@
       },
       "Component_Progress": {
         "component": "index"
+      },
+      "Component_Span": {
+        "component": "index"
+      },
+      "Component_Text": {
+        "component": "index"
+      },
+      "Component_List": {
+        "component": "index"
+      },
+      "Component_Refresh": {
+        "component": "index"
+      },
+      "Component_Richtext": {
+        "component": "index"
+      },
+      "Component_Stack": {
+        "component": "index"
+      },
+      "Component_Swiper": {
+        "component": "index"
+      },
+      "Component_Tabs": {
+        "component": "index"
+      },
+      "Component_Label": {
+        "component": "index"
+      },
+      "Component_Picker": {
+        "component": "index"
+      },
+      "Component_Slider": {
+        "component": "index"
+      },
+      "Component_Switch": {
+        "component": "index"
+      },
+      "Component_Textarea": {
+        "component": "index"
+      },
+      "Component_Map": {
+        "component": "index"
+      },
+      "Component_Video": {
+        "component": "index"
+      },
+      "Style_Transform": {
+        "component": "index"
       }
     }
   },
   "display": {
     "backgroundColor": "#ffffff",
     "titleBar": true,
-    "titleBarBackgroundColor": "#f2f2f2",
+    "titleBarBackgroundColor": "#0faeff",
     "titleBarTextColor": "#414141",
     "pages": {
       "Home": {
@@ -72,6 +120,54 @@
       },
       "Component_Progress": {
         "titleBarText": "Progress"
+      },
+      "Component_Span": {
+        "titleBarText": "Span"
+      },
+      "Component_Text": {
+        "titleBarText": "Text"
+      },
+      "Component_List": {
+        "titleBarText": "List"
+      },
+      "Component_Refresh": {
+        "titleBarText": "Refresh"
+      },
+      "Component_Richtext": {
+        "titleBarText": "Richtext"
+      },
+      "Component_Stack": {
+        "titleBarText": "Stack"
+      },
+      "Component_Swiper": {
+        "titleBarText": "Swiper"
+      },
+      "Component_Tabs": {
+        "titleBarText": "Tabs"
+      },
+      "Component_Label": {
+        "titleBarText": "Label"
+      },
+      "Component_Picker": {
+        "titleBarText": "Picker"
+      },
+      "Component_Slider": {
+        "titleBarText": "Slider"
+      },
+      "Component_Switch": {
+        "titleBarText": "Switch"
+      },
+      "Component_Textarea": {
+        "titleBarText": "Textarea"
+      },
+      "Component_Map": {
+        "titleBarText": "Map"
+      },
+      "Component_Video": {
+        "titleBarText": "Video"
+      },
+      "Style_Transform": {
+        "titleBarText": "Transform"
       }
     }
   }

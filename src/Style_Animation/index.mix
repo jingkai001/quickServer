@@ -1,0 +1,202 @@
+<template>
+    <div class="container">
+        <div class="nav_title">
+            <text class="nav_title_detail">{{component_name}}</text>
+        </div>
+
+        <div class="item_container">
+            <div class="group">
+                <text class="header">animation-name</text>
+                <div class="item {{color}}">
+                    <text class="txt">color</text>
+                </div>
+                <div class="item {{opacity}}">
+                    <text class="txt">opacity</text>
+                </div>
+                <div class="item {{height}}">
+                    <text class="txt">height</text>
+                </div>
+                <div class="item {{width}}">
+                    <text class="txt">width</text>
+                </div>
+                <input type="button" class="btn" name="" value="show" onclick="show01">
+            </div>
+
+            <div class="group">
+                <text class="header">animation-delay</text>
+                <div class="item {{delay}}">
+                    <text class="txt">3s</text>
+                </div>
+                <input type="button" class="btn" name="" value="show" onclick="show02">
+            </div>
+
+            <div class="group">
+                <text class="header">animation-duration</text>
+                <div class="item {{oneSec}}">
+                    <text class="txt">1s</text>
+                </div>
+                <div class="item {{fiveSec}}">
+                    <text class="txt">5s</text>
+                </div>
+                <div class="item {{tenSec}}">
+                    <text class="txt">10s</text>
+                </div>
+                <input type="button" class="btn" name="" value="show" onclick="show03">
+            </div>
+
+            <div class="group">
+                <text class="header">animation-iteration-count</text>
+                <div class="item {{oneCount}}">
+                    <text class="txt">1</text>
+                </div>
+                <div class="item {{twoCount}}">
+                    <text class="txt">2</text>
+                </div>
+                <div class="item {{threeCount}}">
+                    <text class="txt">3</text>
+                </div>
+                <input type="button" class="btn" name="" value="show" onclick="show04">
+            </div>
+
+            <div class="group">
+                <text class="header">animation-timing-function</text>
+                <div class="item {{linear}}">
+                    <text class="txt">linear</text>
+                </div>
+                <div class="item {{ease}}">
+                    <text class="txt">ease</text>
+                </div>
+                <div class="item {{easeIn}}">
+                    <text class="txt">ease-in</text>
+                </div>
+                <div class="item {{easeOut}}">
+                    <text class="txt">ease-out</text>
+                </div>
+                <div class="item {{easeInOut}}">
+                    <text class="txt">ease-in-out</text>
+                </div>
+                <input type="button" class="btn" name="" value="show" onclick="show05">
+            </div>
+
+            <div class="group">
+                <text class="header">animation-fill-mode</text>
+                <div class="item {{forwards}}">
+                    <text class="txt">forwards</text>
+                </div>
+                <div class="item {{none}}">
+                    <text class="txt">none</text>
+                </div>
+                <input type="button" class="btn" name="" value="show" onclick="show06">
+            </div>
+
+            <div class="group">
+                <text class="header">transform in animation</text>
+                <div class="item {{translateX}}">
+                    <text class="txt">translateX</text>
+                </div>
+                <div class="item {{translateY}}">
+                    <text class="txt">translateY</text>
+                </div>
+                <div class="item {{scaleX}}">
+                    <text class="txt">scaleX</text>
+                </div>
+                <div class="item {{scaleY}}">
+                    <text class="txt">scaleY</text>
+                </div>
+                <div class="item {{rotate}}">
+                    <text class="txt">rotate</text>
+                </div>
+                <div class="item {{rotateX}}">
+                    <text class="txt">rotateX</text>
+                </div>
+                <div class="item {{rotateY}}">
+                    <text class="txt">rotateY</text>
+                </div>
+                <input type="button" class="btn" name="" value="show" onclick="show07">
+            </div>
+        </div>
+    </div>
+</template>
+
+<style>
+    @import '../Common/css/common.css';
+
+    .item_container{
+        margin: 0 60px 50px;
+        flex-direction: column;
+        align-items: center;
+    }
+    .group{
+        margin-bottom: 150px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .header{
+        margin-bottom: 20px;
+    }
+    .item{
+        background-color: #f76160;
+    }
+    .txt{
+        text-align: center;
+        width: 200px;
+        height: 200px;
+    }
+    .btn{
+        color: #ffffff;
+        background-color: #09ba07;
+        width: 200px;
+    }
+    .color{
+        animation-name: Color;
+        animation-duration: 8000ms;
+    }
+    .opacity{
+        animation-name: Opacity;
+        animation-duration: 8000ms;
+    }
+    .height{
+        animation-name: Height;
+        animation-duration: 8000ms;
+    }
+    .width{
+        animation-name: Widht;
+        animation-duration: 8000ms;
+    }
+    .delay{
+        animation-name: Go;
+        animation-duration: 5000ms;
+        animation-delay: 3000ms;
+    }
+    .oneSec{
+        animation-name: Go;
+        animation-duration: 1000ms;
+    }
+    .fiveSec{
+        animation-name: Go;
+        animation-duration: 5000ms;
+    }
+    .tenSec{
+        animation-name: Go;
+        animation-duration: 10000ms;
+    }
+    .oneCount{
+        animation-name: Go;
+        animation-duration: 3000ms;
+        animation-iteration-count: 1;
+    }
+    .twoCount{
+        animation-name: Go;
+        animation-duration: 3000ms;
+        animation-iteration-count: 2;
+    }
+    .threeCount{
+        animation-name: Go;
+        animation-duration: 3000ms;
+        animation-iteration-count: 3;
+    }
+</style>
+
+<script>
+
+</script>

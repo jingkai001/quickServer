@@ -1,0 +1,306 @@
+<template>
+    <div class="container">
+        <div class="nav_title">
+            <text class="nav_title_detail">{{component_name}}</text>
+        </div>
+
+        <div class="item_container">
+            <div class="group">
+                <text class="header">rotate</text>
+                <div class="item">
+                    <input type="button" class="btn btn-first" name="" value="rotate" onclick="rotate">
+                    <input type="button" class="btn" name="" value="rotateX" onclick="rotateX">
+                    <input type="button" class="btn" name="" value="rotateY" onclick="rotateY">
+                </div>
+                <div class="green-box {{r}}">
+                    <text class="green-txt txt">rotate</text>
+                </div>
+                <div class="blue-box {{rx}}">
+                    <text class="blue-text txt">rotateX</text>
+                </div>
+                <div class="red-box {{ry}}">
+                    <text class="red-text txt">rotateY</text>
+                </div>
+            </div>
+
+            <div class="group">
+                <text class="header">translate</text>
+                <div class="item">
+                    <input type="button" class="btn btn-first" name="" value="translateX" onclick="translateX">
+                    <input type="button" class="btn" name="" value="translateY" onclick="translateY">
+                </div>
+                <div class="green-box {{tx}}">
+                    <text class="green-txt txt">translateX</text>
+                </div>
+                <div class="red-box {{ty}}">
+                    <text class="red-text txt">translateY</text>
+                </div>
+            </div>
+
+            <div class="group">
+                <text class="header">scale</text>
+                <div class="item">
+                    <input type="button" class="btn btn-first" name="" value="scaleX" onclick="scaleX">
+                    <input type="button" class="btn" name="" value="scaleY" onclick="scaleY">
+                </div>
+                <div class="green-box {{sx}}">
+                    <text class="green-txt txt">scaleX</text>
+                </div>
+                <div class="red-box {{sy}}">
+                    <text class="red-text txt">scaleY</text>
+                </div>
+            </div>
+
+            <div class="group">
+                <text class="header">rotate+translate</text>
+                <!--<input type="button" class="btn" value="transform" onclick="addClass('ele1')">-->
+                <div class="rotate-stage">
+                    <text class="stage">stage</text>
+                    <text class="{{rotate_ele,ele1,ele1Tra}}" onclick="addClass('ele1Tra')">1</text>
+                    <text class="{{rotate_ele,ele2,ele2Tra}}" onclick="addClass('ele2Tra')">2</text>
+                    <text class="{{rotate_ele,ele3,ele3Tra}}" onclick="addClass('ele3Tra')">3</text>
+                    <text class="{{rotate_ele,ele4,ele4Tra}}" onclick="addClass('ele4Tra')">4</text>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+
+<style>
+    @import '../Common/css/common.css';
+
+    .rotate-stage{
+        position: fixed;
+        height: 100px;
+        width: 100px;
+        background-color: #f76160;
+        text-align: center;
+        line-height: 100px;
+        color: #ffffff;
+    }
+    .rotate-ele{
+        position: fixed;
+        height: 100px;
+        width: 100px;
+        transform-origin: 50px 50px;
+        color: #ffffff;
+        text-align: center;
+        line-height: 100px;
+    }
+    .ele1{
+        background-color: #09ba07;
+        transform: rotate(30deg);
+    }
+    .ele1Tra{
+        transform:translateX(200px);
+    }
+    .ele2Tra{
+        transform:translateX(200px);
+    }
+    .ele3Tra{
+        transform:translateX(200px);
+    }
+    .ele4Tra{
+        transform:translateX(200px);
+    }
+    .ele2{
+        background-color: #0faeff;
+        transform: rotate(60deg);
+    }
+    .ele3{
+        background-color: #aaaaaa;
+        transform: rotate(90deg);
+    }
+    .ele4{
+        background-color: #564321;
+        transform: rotate(120deg);
+    }
+
+    .item_container {
+        margin-bottom: 50px;
+        margin-right: 60px;
+        margin-left: 60px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .group {
+        margin-bottom: 100px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .header {
+        margin-bottom: 20px;
+    }
+
+    .txt {
+        text-align: center;
+        width: 200px;
+        height: 100px;
+    }
+
+    .item {
+        align-items: center;
+        margin-bottom: 100px;
+    }
+
+    .btn {
+        flex: 1;
+        margin-left: 30px;
+        text-align: center;
+        background-color: #0faeff;
+        color: #ffffff;
+        border-radius: 10px;
+    }
+
+    .btn-first {
+        margin-left: 0px;
+    }
+
+    .green-box, .blue-box, .red-box {
+        margin-bottom: 50px;
+        border-style: dotted;
+        border-width: 2px;
+    }
+
+    .green-box {
+        border-color: #09ba07;
+    }
+
+    .green-txt {
+        color: #09ba07;
+    }
+
+    .blue-box {
+        border-color: #0faeff;
+        color: #0faeff;
+    }
+
+    .blue-text {
+        color: #0faeff;
+    }
+
+    .red-box {
+        border-color: #f76160;
+        color: #f76160;
+    }
+
+    .red-text {
+        color: #f76160;
+    }
+
+    .rotate {
+        transform: rotate(90deg);
+    }
+
+    .rotateX {
+        transform: rotateX(50deg);
+    }
+
+    .rotateY {
+        transform: rotateY(50deg);
+    }
+
+    .rotateRecovery {
+        transform: rotate(0deg);
+    }
+
+    .rotateXRecovery {
+        transform: rotateX(0deg);
+    }
+
+    .rotateYRecovery {
+        transform: rotateY(0deg);
+    }
+
+    .translateX {
+        transform: translateX(50px);
+    }
+
+    .translateY {
+        transform: translateY(50px);
+    }
+
+    .translateXRecovery {
+        transform: translateX(0px);
+    }
+
+    .translateYRecovery {
+        transform: translateY(0px);
+    }
+
+    .scaleX {
+        transform: scaleX(1.5);
+    }
+
+    .scaleY {
+        transform: scaleY(1.5);
+    }
+
+    .scaleXRecovery {
+        transform: scaleX(1);
+    }
+
+    .scaleYRecovery {
+        transform: scaleY(1);
+    }
+</style>
+
+<script>
+    export default {
+        data: {
+            component_name: "transform",
+            rotate_ele:'rotate-ele',
+            ele1:'ele1',
+            ele2:'ele2',
+            ele3:'ele3',
+            ele4:'ele4',
+            ele1Tra:'',
+            ele2Tra:'',
+            ele3Tra:'',
+            ele4Tra:'',
+            r: '',
+            rx: '',
+            ry: '',
+            tx: '',
+            ty: '',
+            sx: '',
+            sy: ''
+        },
+        rotate: function () {
+            this.setClass('r', 'rotate');
+        },
+        rotateX: function () {
+            this.setClass('rx', 'rotateX');
+        },
+        rotateY: function () {
+            this.setClass('ry', 'rotateY');
+        },
+        translateX: function () {
+            this.setClass('tx', 'translateX');
+        },
+        translateY: function () {
+            this.setClass('ty', 'translateY');
+        },
+        scaleX: function () {
+            this.setClass('sx', 'scaleX');
+        },
+        scaleY: function () {
+            this.setClass('sy', 'scaleY');
+        },
+        setClass: function (key, className) {
+            var that_ = this;
+            if (that_[key] == className) {
+                that_[key] += 'Recovery';
+            } else {
+                that_[key] = className;
+            }
+        },
+        addClass: function (className) {
+            console.log(this[className],1111);
+            this[className] = className;
+            console.log(this[className],2222);
+        }
+    }
+</script>​

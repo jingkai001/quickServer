@@ -1,0 +1,18 @@
+<template>
+    <div class="container">
+        <div class="header-container">
+            <div class="profile-icon">
+                <image class="image" src="/Common/img/route.png"></image>
+                <div></div>
+            </div>
+        </div>
+        <div class="body-container"></div>
+    </div>
+</template>
+
+<style>
+</style>
+
+<script>
+
+</script>

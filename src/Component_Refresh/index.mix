@@ -1,0 +1,60 @@
+<template>
+    <div class="container">
+        <!--onrefresh事件：下拉refresh组件，触发刷新操作，事件参数：refreshing
+            refreshing： 属性，刷新组件是否正在刷新-->
+        <refresh class="refresh" onrefresh="refresh" refreshing="{{is_refreshing}}">
+            <div class="nav_title">
+                <text class="nav_title_detail">{{component_name}}</text>
+            </div>
+            <div class="item_container">
+                <input type="button" class="button" name="" value="停止刷新" onclick="stopRefresh">
+            </div>
+        </refresh>
+    </div>
+</template>
+
+<style>
+    @import '../Common/css/common.css';
+
+    .refresh{
+        flex-direction: column;
+        flex: 1;
+    }
+    .item_container{
+        margin:0 60px 50px;
+        flex-direction: column;
+    }
+    .button{
+        height: 80px;
+        text-align: center;
+        border-radius: 5px;
+        margin:0 60px 50px 50px;
+        color: #ffffff;
+        background-color: #0faeff;
+    }
+</style>
+
+<script>
+    import prompt from '@system.prompt';
+    export default {
+        data: {
+            component_name: 'refresh',
+            is_refreshing: false,
+        },
+        // 下拉刷新时，触发refresh方法，e.refreshing为true，设置组件的refreshing值为true，此时可以进行一些异步操作，获取数据等，异步完成设置组件的refreshing属性为false
+        refresh: function (e) {
+            let that = this;
+            that.is_refreshing = e.refreshing; // 更新刷新状态
+            setTimeout(function () {
+                that.is_refreshing = 'false'; // 关闭刷新状态
+                prompt.showToast({
+                    message: '刷新完成'
+                })
+            },2000)
+        },
+        stopRefresh: function () {
+            this.is_refreshing = 'false';
+        }
+
+    }
+</script>

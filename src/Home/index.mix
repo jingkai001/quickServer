@@ -8,6 +8,45 @@
                             以下将展示新应用组件能力，组件样式进供参考，开发者可根据自身需求自定义组件样式，具体属性参数详见新应用开发文档
                         </text>
                     </div>
+
+                    <!--容器组件：div list list-item refresh richtext stack swiper tabs tab-bar tab-content-->
+                    <div class="item_container">
+                        <div class="item_title">
+                            <text class="item_title_detail {{list.compo_view}}_txt" onclick="select_conFn('compo_view')">容器组件</text>
+                        </div>
+                        <div class="item_content {{list.compo_view}}">
+                            <div class="item_li" onclick="detail('Component_Div')">
+                                <text class="item_li_detail">div</text>
+                                <image class="item_arrow_img" src="/Common/img/arrow_right.png" resize-mode="contain"></image>
+                            </div>
+                            <div class="item_li" onclick="detail('Component_List')">
+                                <text class="item_li_detail">list</text>
+                                <image class="item_arrow_img" src="/Common/img/arrow_right.png" resize-mode="contain"></image>
+                            </div>
+                            <div class="item_li" onclick="detail('Component_Refresh')">
+                                <text class="item_li_detail">refresh</text>
+                                <image class="item_arrow_img" src="/Common/img/arrow_right.png" resize-mode="contain"></image>
+                            </div>
+                            <div class="item_li" onclick="detail('Component_Richtext')">
+                                <text class="item_li_detail">richtext</text>
+                                <image class="item_arrow_img" src="/Common/img/arrow_right.png" resize-mode="contain"></image>
+                            </div>
+                            <div class="item_li" onclick="detail('Component_Stack')">
+                                <text class="item_li_detail">stack</text>
+                                <image class="item_arrow_img" src="/Common/img/arrow_right.png" resize-mode="contain"></image>
+                            </div>
+                            <div class="item_li" onclick="detail('Component_Swiper')">
+                                <text class="item_li_detail">swiper</text>
+                                <image class="item_arrow_img" src="/Common/img/arrow_right.png" resize-mode="contain"></image>
+                            </div>
+                            <div class="item_li" onclick="detail('Component_Tabs')">
+                                <text class="item_li_detail">tabs</text>
+                                <image class="item_arrow_img" src="/Common/img/arrow_right.png" resize-mode="contain"></image>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--基础组件：a image progress span text-->
                     <div class="item_container">
                         <div class="item_title">
                             <text class="item_title_detail {{list.compo_basic}}_txt" onclick="select_conFn('compo_basic')">基础组件</text>
@@ -16,14 +55,6 @@
                             <div class="item_li" onclick="detail('Component_A')">
                                 <text class="item_li_detail">a</text>
                                 <image class="item_arrow_img" src="/Common/img/arrow_right.png" ></image>
-                            </div>
-                            <div class="item_li" onclick="detail('Component_Div')">
-                                <text class="item_li_detail">div</text>
-                                <image class="item_arrow_img" src="/Common/img/arrow_right.png" resize-mode="contain"></image>
-                            </div>
-                            <div class="item_li" onclick="detail('Component_Input')">
-                                <text class="item_li_detail">input</text>
-                                <image class="item_arrow_img" src="/Common/img/arrow_right.png" resize-mode="contain"></image>
                             </div>
                             <div class="item_li" onclick="detail('Component_Image')">
                                 <text class="item_li_detail">image</text>
@@ -39,6 +70,68 @@
                             </div>
                             <div class="item_li" onclick="detail('Component_Text')">
                                 <text class="item_li_detail">text</text>
+                                <image class="item_arrow_img" src="/Common/img/arrow_right.png" resize-mode="contain"></image>
+                            </div>
+
+                            <!--<div class="item_li" onclick="detail('Style_Transform')">
+                                <text class="item_li_detail">transform</text>
+                                <image class="item_arrow_img" src="/Common/img/arrow_right.png" resize-mode="contain"></image>
+                            </div>-->
+                        </div>
+                    </div>
+
+                    <!--表单组件：input label picker slider switch textarea-->
+                    <div class="item_container">
+                        <div class="item_title">
+                            <text class="item_title_detail {{list.compo_form}}_txt" onclick="select_conFn('compo_form')">表单组件</text>
+                        </div>
+                        <div class="item_content {{list.compo_form}}">
+                            <div class="item_li" onclick="detail('Component_Input')">
+                                <text class="item_li_detail">input</text>
+                                <image class="item_arrow_img" src="/Common/img/arrow_right.png" resize-mode="contain"></image>
+                            </div>
+                            <div class="item_li" onclick="detail('Component_Label')">
+                                <text class="item_li_detail">label</text>
+                                <image class="item_arrow_img" src="/Common/img/arrow_right.png" resize-mode="contain"></image>
+                            </div>
+                            <div class="item_li" onclick="detail('Component_Picker')">
+                                <text class="item_li_detail">picker</text>
+                                <image class="item_arrow_img" src="/Common/img/arrow_right.png" resize-mode="contain"></image>
+                            </div>
+                            <div class="item_li" onclick="detail('Component_Slider')">
+                                <text class="item_li_detail">slider</text>
+                                <image class="item_arrow_img" src="/Common/img/arrow_right.png" resize-mode="contain"></image>
+                            </div>
+                            <div class="item_li" onclick="detail('Component_Switch')">
+                                <text class="item_li_detail">switch</text>
+                                <image class="item_arrow_img" src="/Common/img/arrow_right.png" resize-mode="contain"></image>
+                            </div>
+                            <div class="item_li" onclick="detail('Component_Textarea')">
+                                <text class="item_li_detail">textarea</text>
+                                <image class="item_arrow_img" src="/Common/img/arrow_right.png" resize-mode="contain"></image>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item_container">
+                        <div class="item_title">
+                            <text class="item_title_detail {{list.compo_others}}" onclick="select_conFn('compo_others')">其它</text>
+                        </div>
+                        <div class="item_content {{list.compo_others}}">
+                            <div class="item_li" onclick="detail('Component_Map')">
+                                <text class="item_li_detail">map(暂时关闭)</text>
+                                <image class="item_arrow_img" src="/Common/img/arrow_right.png" resize-mode="contain"></image>
+                            </div>
+                            <div class="item_li" onclick="detail('Component_Video')">
+                                <text class="item_li_detail">video</text>
+                                <image class="item_arrow_img" src="/Common/img/arrow_right.png" resize-mode="contain"></image>
+                            </div>
+                            <div class="item_li" onclick="detail('Style_Animation')">
+                                <text class="item_li_detail">animation</text>
+                                <image class="item_arrow_img" src-="/Common/img/arrow_right.png" resize-mode="contain"></image>
+                            </div>
+                            <div class="item_li" onclick="detail('Style_Transform')">
+                                <text class="item_li_detail">transform</text>
                                 <image class="item_arrow_img" src="/Common/img/arrow_right.png" resize-mode="contain"></image>
                             </div>
                         </div>
@@ -119,7 +212,10 @@
     module.exports = {
         data:{
             list:{
+                compo_view:'',
                 compo_basic:'',
+                compo_form: '',
+                compo_others: '',
             }
         },
 

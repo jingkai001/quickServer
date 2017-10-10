@@ -48,9 +48,9 @@
 /***/ 0:
 /***/ function(module, exports, __webpack_require__) {
 
-	var $app_template$ = __webpack_require__(16)
-	var $app_style$ = __webpack_require__(17)
-	var $app_script$ = __webpack_require__(18)
+	var $app_template$ = __webpack_require__(61)
+	var $app_style$ = __webpack_require__(62)
+	var $app_script$ = __webpack_require__(63)
 	
 	$app_define$('@app-component/index', [], function($app_require$, $app_exports$, $app_module$){
 	     $app_script$($app_module$, $app_exports$, $app_require$)
@@ -66,7 +66,7 @@
 
 /***/ },
 
-/***/ 16:
+/***/ 61:
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -109,6 +109,258 @@
 	                      },
 	                      "classList": [
 	                        "introduce_detail"
+	                      ]
+	                    }
+	                  ]
+	                },
+	                {
+	                  "type": "div",
+	                  "attr": {},
+	                  "classList": [
+	                    "item_container"
+	                  ],
+	                  "children": [
+	                    {
+	                      "type": "div",
+	                      "attr": {},
+	                      "classList": [
+	                        "item_title"
+	                      ],
+	                      "children": [
+	                        {
+	                          "type": "text",
+	                          "attr": {
+	                            "value": "容器组件"
+	                          },
+	                          "classList": function () {return ['item_title_detail', (this.list.compo_view) + '_txt']},
+	                          "events": {
+	                            "click": function (evt) {this.select_conFn('compo_view',evt)}
+	                          }
+	                        }
+	                      ]
+	                    },
+	                    {
+	                      "type": "div",
+	                      "attr": {},
+	                      "classList": function () {return ['item_content', this.list.compo_view]},
+	                      "children": [
+	                        {
+	                          "type": "div",
+	                          "attr": {},
+	                          "classList": [
+	                            "item_li"
+	                          ],
+	                          "events": {
+	                            "click": function (evt) {this.detail('Component_Div',evt)}
+	                          },
+	                          "children": [
+	                            {
+	                              "type": "text",
+	                              "attr": {
+	                                "value": "div"
+	                              },
+	                              "classList": [
+	                                "item_li_detail"
+	                              ]
+	                            },
+	                            {
+	                              "type": "image",
+	                              "attr": {
+	                                "src": "/Common/img/arrow_right.png",
+	                                "resizeMode": "contain"
+	                              },
+	                              "classList": [
+	                                "item_arrow_img"
+	                              ]
+	                            }
+	                          ]
+	                        },
+	                        {
+	                          "type": "div",
+	                          "attr": {},
+	                          "classList": [
+	                            "item_li"
+	                          ],
+	                          "events": {
+	                            "click": function (evt) {this.detail('Component_List',evt)}
+	                          },
+	                          "children": [
+	                            {
+	                              "type": "text",
+	                              "attr": {
+	                                "value": "list"
+	                              },
+	                              "classList": [
+	                                "item_li_detail"
+	                              ]
+	                            },
+	                            {
+	                              "type": "image",
+	                              "attr": {
+	                                "src": "/Common/img/arrow_right.png",
+	                                "resizeMode": "contain"
+	                              },
+	                              "classList": [
+	                                "item_arrow_img"
+	                              ]
+	                            }
+	                          ]
+	                        },
+	                        {
+	                          "type": "div",
+	                          "attr": {},
+	                          "classList": [
+	                            "item_li"
+	                          ],
+	                          "events": {
+	                            "click": function (evt) {this.detail('Component_Refresh',evt)}
+	                          },
+	                          "children": [
+	                            {
+	                              "type": "text",
+	                              "attr": {
+	                                "value": "refresh"
+	                              },
+	                              "classList": [
+	                                "item_li_detail"
+	                              ]
+	                            },
+	                            {
+	                              "type": "image",
+	                              "attr": {
+	                                "src": "/Common/img/arrow_right.png",
+	                                "resizeMode": "contain"
+	                              },
+	                              "classList": [
+	                                "item_arrow_img"
+	                              ]
+	                            }
+	                          ]
+	                        },
+	                        {
+	                          "type": "div",
+	                          "attr": {},
+	                          "classList": [
+	                            "item_li"
+	                          ],
+	                          "events": {
+	                            "click": function (evt) {this.detail('Component_Richtext',evt)}
+	                          },
+	                          "children": [
+	                            {
+	                              "type": "text",
+	                              "attr": {
+	                                "value": "richtext"
+	                              },
+	                              "classList": [
+	                                "item_li_detail"
+	                              ]
+	                            },
+	                            {
+	                              "type": "image",
+	                              "attr": {
+	                                "src": "/Common/img/arrow_right.png",
+	                                "resizeMode": "contain"
+	                              },
+	                              "classList": [
+	                                "item_arrow_img"
+	                              ]
+	                            }
+	                          ]
+	                        },
+	                        {
+	                          "type": "div",
+	                          "attr": {},
+	                          "classList": [
+	                            "item_li"
+	                          ],
+	                          "events": {
+	                            "click": function (evt) {this.detail('Component_Stack',evt)}
+	                          },
+	                          "children": [
+	                            {
+	                              "type": "text",
+	                              "attr": {
+	                                "value": "stack"
+	                              },
+	                              "classList": [
+	                                "item_li_detail"
+	                              ]
+	                            },
+	                            {
+	                              "type": "image",
+	                              "attr": {
+	                                "src": "/Common/img/arrow_right.png",
+	                                "resizeMode": "contain"
+	                              },
+	                              "classList": [
+	                                "item_arrow_img"
+	                              ]
+	                            }
+	                          ]
+	                        },
+	                        {
+	                          "type": "div",
+	                          "attr": {},
+	                          "classList": [
+	                            "item_li"
+	                          ],
+	                          "events": {
+	                            "click": function (evt) {this.detail('Component_Swiper',evt)}
+	                          },
+	                          "children": [
+	                            {
+	                              "type": "text",
+	                              "attr": {
+	                                "value": "swiper"
+	                              },
+	                              "classList": [
+	                                "item_li_detail"
+	                              ]
+	                            },
+	                            {
+	                              "type": "image",
+	                              "attr": {
+	                                "src": "/Common/img/arrow_right.png",
+	                                "resizeMode": "contain"
+	                              },
+	                              "classList": [
+	                                "item_arrow_img"
+	                              ]
+	                            }
+	                          ]
+	                        },
+	                        {
+	                          "type": "div",
+	                          "attr": {},
+	                          "classList": [
+	                            "item_li"
+	                          ],
+	                          "events": {
+	                            "click": function (evt) {this.detail('Component_Tabs',evt)}
+	                          },
+	                          "children": [
+	                            {
+	                              "type": "text",
+	                              "attr": {
+	                                "value": "tabs"
+	                              },
+	                              "classList": [
+	                                "item_li_detail"
+	                              ]
+	                            },
+	                            {
+	                              "type": "image",
+	                              "attr": {
+	                                "src": "/Common/img/arrow_right.png",
+	                                "resizeMode": "contain"
+	                              },
+	                              "classList": [
+	                                "item_arrow_img"
+	                              ]
+	                            }
+	                          ]
+	                        }
 	                      ]
 	                    }
 	                  ]
@@ -181,68 +433,6 @@
 	                            "item_li"
 	                          ],
 	                          "events": {
-	                            "click": function (evt) {this.detail('Component_Div',evt)}
-	                          },
-	                          "children": [
-	                            {
-	                              "type": "text",
-	                              "attr": {
-	                                "value": "div"
-	                              },
-	                              "classList": [
-	                                "item_li_detail"
-	                              ]
-	                            },
-	                            {
-	                              "type": "image",
-	                              "attr": {
-	                                "src": "/Common/img/arrow_right.png",
-	                                "resizeMode": "contain"
-	                              },
-	                              "classList": [
-	                                "item_arrow_img"
-	                              ]
-	                            }
-	                          ]
-	                        },
-	                        {
-	                          "type": "div",
-	                          "attr": {},
-	                          "classList": [
-	                            "item_li"
-	                          ],
-	                          "events": {
-	                            "click": function (evt) {this.detail('Component_Input',evt)}
-	                          },
-	                          "children": [
-	                            {
-	                              "type": "text",
-	                              "attr": {
-	                                "value": "input"
-	                              },
-	                              "classList": [
-	                                "item_li_detail"
-	                              ]
-	                            },
-	                            {
-	                              "type": "image",
-	                              "attr": {
-	                                "src": "/Common/img/arrow_right.png",
-	                                "resizeMode": "contain"
-	                              },
-	                              "classList": [
-	                                "item_arrow_img"
-	                              ]
-	                            }
-	                          ]
-	                        },
-	                        {
-	                          "type": "div",
-	                          "attr": {},
-	                          "classList": [
-	                            "item_li"
-	                          ],
-	                          "events": {
 	                            "click": function (evt) {this.detail('Component_Image',evt)}
 	                          },
 	                          "children": [
@@ -297,6 +487,351 @@
 	                              ]
 	                            }
 	                          ]
+	                        },
+	                        {
+	                          "type": "div",
+	                          "attr": {},
+	                          "classList": [
+	                            "item_li"
+	                          ],
+	                          "events": {
+	                            "click": function (evt) {this.detail('Component_Span',evt)}
+	                          },
+	                          "children": [
+	                            {
+	                              "type": "text",
+	                              "attr": {
+	                                "value": "span"
+	                              },
+	                              "classList": [
+	                                "item_li_detail"
+	                              ]
+	                            },
+	                            {
+	                              "type": "image",
+	                              "attr": {
+	                                "src": "/Common/img/arrow_right.png",
+	                                "resizeMode": "contain"
+	                              },
+	                              "classList": [
+	                                "item_arrow_img"
+	                              ]
+	                            }
+	                          ]
+	                        },
+	                        {
+	                          "type": "div",
+	                          "attr": {},
+	                          "classList": [
+	                            "item_li"
+	                          ],
+	                          "events": {
+	                            "click": function (evt) {this.detail('Component_Text',evt)}
+	                          },
+	                          "children": [
+	                            {
+	                              "type": "text",
+	                              "attr": {
+	                                "value": "text"
+	                              },
+	                              "classList": [
+	                                "item_li_detail"
+	                              ]
+	                            },
+	                            {
+	                              "type": "image",
+	                              "attr": {
+	                                "src": "/Common/img/arrow_right.png",
+	                                "resizeMode": "contain"
+	                              },
+	                              "classList": [
+	                                "item_arrow_img"
+	                              ]
+	                            }
+	                          ]
+	                        }
+	                      ]
+	                    }
+	                  ]
+	                },
+	                {
+	                  "type": "div",
+	                  "attr": {},
+	                  "classList": [
+	                    "item_container"
+	                  ],
+	                  "children": [
+	                    {
+	                      "type": "div",
+	                      "attr": {},
+	                      "classList": [
+	                        "item_title"
+	                      ],
+	                      "children": [
+	                        {
+	                          "type": "text",
+	                          "attr": {
+	                            "value": "表单组件"
+	                          },
+	                          "classList": function () {return ['item_title_detail', (this.list.compo_form) + '_txt']},
+	                          "events": {
+	                            "click": function (evt) {this.select_conFn('compo_form',evt)}
+	                          }
+	                        }
+	                      ]
+	                    },
+	                    {
+	                      "type": "div",
+	                      "attr": {},
+	                      "classList": function () {return ['item_content', this.list.compo_form]},
+	                      "children": [
+	                        {
+	                          "type": "div",
+	                          "attr": {},
+	                          "classList": [
+	                            "item_li"
+	                          ],
+	                          "events": {
+	                            "click": function (evt) {this.detail('Component_Input',evt)}
+	                          },
+	                          "children": [
+	                            {
+	                              "type": "text",
+	                              "attr": {
+	                                "value": "input"
+	                              },
+	                              "classList": [
+	                                "item_li_detail"
+	                              ]
+	                            },
+	                            {
+	                              "type": "image",
+	                              "attr": {
+	                                "src": "/Common/img/arrow_right.png",
+	                                "resizeMode": "contain"
+	                              },
+	                              "classList": [
+	                                "item_arrow_img"
+	                              ]
+	                            }
+	                          ]
+	                        },
+	                        {
+	                          "type": "div",
+	                          "attr": {},
+	                          "classList": [
+	                            "item_li"
+	                          ],
+	                          "events": {
+	                            "click": function (evt) {this.detail('Component_Label',evt)}
+	                          },
+	                          "children": [
+	                            {
+	                              "type": "text",
+	                              "attr": {
+	                                "value": "label"
+	                              },
+	                              "classList": [
+	                                "item_li_detail"
+	                              ]
+	                            },
+	                            {
+	                              "type": "image",
+	                              "attr": {
+	                                "src": "/Common/img/arrow_right.png",
+	                                "resizeMode": "contain"
+	                              },
+	                              "classList": [
+	                                "item_arrow_img"
+	                              ]
+	                            }
+	                          ]
+	                        },
+	                        {
+	                          "type": "div",
+	                          "attr": {},
+	                          "classList": [
+	                            "item_li"
+	                          ],
+	                          "events": {
+	                            "click": function (evt) {this.detail('Component_Picker',evt)}
+	                          },
+	                          "children": [
+	                            {
+	                              "type": "text",
+	                              "attr": {
+	                                "value": "picker"
+	                              },
+	                              "classList": [
+	                                "item_li_detail"
+	                              ]
+	                            },
+	                            {
+	                              "type": "image",
+	                              "attr": {
+	                                "src": "/Common/img/arrow_right.png",
+	                                "resizeMode": "contain"
+	                              },
+	                              "classList": [
+	                                "item_arrow_img"
+	                              ]
+	                            }
+	                          ]
+	                        },
+	                        {
+	                          "type": "div",
+	                          "attr": {},
+	                          "classList": [
+	                            "item_li"
+	                          ],
+	                          "events": {
+	                            "click": function (evt) {this.detail('Component_Slider',evt)}
+	                          },
+	                          "children": [
+	                            {
+	                              "type": "text",
+	                              "attr": {
+	                                "value": "slider"
+	                              },
+	                              "classList": [
+	                                "item_li_detail"
+	                              ]
+	                            },
+	                            {
+	                              "type": "image",
+	                              "attr": {
+	                                "src": "/Common/img/arrow_right.png",
+	                                "resizeMode": "contain"
+	                              },
+	                              "classList": [
+	                                "item_arrow_img"
+	                              ]
+	                            }
+	                          ]
+	                        },
+	                        {
+	                          "type": "div",
+	                          "attr": {},
+	                          "classList": [
+	                            "item_li"
+	                          ],
+	                          "events": {
+	                            "click": function (evt) {this.detail('Component_Switch',evt)}
+	                          },
+	                          "children": [
+	                            {
+	                              "type": "text",
+	                              "attr": {
+	                                "value": "switch"
+	                              },
+	                              "classList": [
+	                                "item_li_detail"
+	                              ]
+	                            },
+	                            {
+	                              "type": "image",
+	                              "attr": {
+	                                "src": "/Common/img/arrow_right.png",
+	                                "resizeMode": "contain"
+	                              },
+	                              "classList": [
+	                                "item_arrow_img"
+	                              ]
+	                            }
+	                          ]
+	                        },
+	                        {
+	                          "type": "div",
+	                          "attr": {},
+	                          "classList": [
+	                            "item_li"
+	                          ],
+	                          "events": {
+	                            "click": function (evt) {this.detail('Component_Textarea',evt)}
+	                          },
+	                          "children": [
+	                            {
+	                              "type": "text",
+	                              "attr": {
+	                                "value": "textarea"
+	                              },
+	                              "classList": [
+	                                "item_li_detail"
+	                              ]
+	                            },
+	                            {
+	                              "type": "image",
+	                              "attr": {
+	                                "src": "/Common/img/arrow_right.png",
+	                                "resizeMode": "contain"
+	                              },
+	                              "classList": [
+	                                "item_arrow_img"
+	                              ]
+	                            }
+	                          ]
+	                        },
+	                        {
+	                          "type": "div",
+	                          "attr": {},
+	                          "classList": [
+	                            "item_li"
+	                          ],
+	                          "events": {
+	                            "click": function (evt) {this.detail('Component_Map',evt)}
+	                          },
+	                          "children": [
+	                            {
+	                              "type": "text",
+	                              "attr": {
+	                                "value": "map(暂时关闭)"
+	                              },
+	                              "classList": [
+	                                "item_li_detail"
+	                              ]
+	                            },
+	                            {
+	                              "type": "image",
+	                              "attr": {
+	                                "src": "/Common/img/arrow_right.png",
+	                                "resizeMode": "contain"
+	                              },
+	                              "classList": [
+	                                "item_arrow_img"
+	                              ]
+	                            }
+	                          ]
+	                        },
+	                        {
+	                          "type": "div",
+	                          "attr": {},
+	                          "classList": [
+	                            "item_li"
+	                          ],
+	                          "events": {
+	                            "click": function (evt) {this.detail('Component_Video',evt)}
+	                          },
+	                          "children": [
+	                            {
+	                              "type": "text",
+	                              "attr": {
+	                                "value": "video"
+	                              },
+	                              "classList": [
+	                                "item_li_detail"
+	                              ]
+	                            },
+	                            {
+	                              "type": "image",
+	                              "attr": {
+	                                "src": "/Common/img/arrow_right.png",
+	                                "resizeMode": "contain"
+	                              },
+	                              "classList": [
+	                                "item_arrow_img"
+	                              ]
+	                            }
+	                          ]
 	                        }
 	                      ]
 	                    }
@@ -313,7 +848,7 @@
 
 /***/ },
 
-/***/ 17:
+/***/ 62:
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -401,7 +936,7 @@
 
 /***/ },
 
-/***/ 18:
+/***/ 63:
 /***/ function(module, exports) {
 
 	module.exports = function(module, exports, $app_require$){'use strict';
@@ -415,7 +950,9 @@
 	module.exports = {
 	    data: function () {return {
 	        list: {
-	            compo_basic: ''
+	            compo_view: '',
+	            compo_basic: '',
+	            compo_form: ''
 	        }
 	    }},
 	

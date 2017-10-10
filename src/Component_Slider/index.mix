@@ -1,0 +1,71 @@
+<template>
+    <div class="container">
+        <div class="nav_title">
+            <text class="nav_title_detail">{{component_name}}</text>
+        </div>
+
+        <div class="item_container">
+            <text class="item_title">设置step</text>
+            <div class="item_content">
+                <slider class="slider" selected-color="#0faeff" min="10" max="100" value="70" enable="true" onchange="get_stepvalue"></slider>
+                <text class="label">{{step}}</text>
+            </div>
+        </div>
+
+        <div class="item_container">
+            <text class="item_title">显示当前value</text>
+            <div class="item_content">
+                <slider class="slider" selected-color="#0faeff" min="0" max="100" value="50" enable="true" onchange="get_currentvalue"></slider>
+                <text class="label">{{current_value}}</text>
+            </div>
+        </div>
+
+        <div class="item_container">
+            <text class="item_title">设置最小/最大值</text>
+            <div class="item_content">
+                <slider class="slider" selected-color="#0faeff" min="50" max="200" value="100" enable="true" onchange="get_maxvalue"></slider>
+                <text class="label">{{max_value}}</text>
+            </div>
+        </div>
+    </div>
+</template>
+
+<style>
+    @import '../Common/css/common.css';
+    .item_container{
+        margin-top: 20px;
+        flex-direction: column;
+    }
+    .item_title{
+        padding-left: 40px;
+        color: #aaaaaa;
+    }
+    .slider{
+        flex: 1;
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+    .label{
+        padding:0 30px;
+    }
+</style>
+
+<script>
+    export default {
+        data: {
+            component_name: 'slider',
+            step: 70,
+            current_value: 50,
+            max_value: 100,
+        },
+        get_stepvalue: function (e) {
+            this.step = e.progress;
+        },
+        get_currentvalue: function (e) {
+            this.current_value = e.progress;
+        },
+        get_maxvalue: function (e) {
+            this.max_value = e.progress;
+        }
+    }
+</script>

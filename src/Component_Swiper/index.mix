@@ -1,0 +1,101 @@
+<template>
+    <div class="container">
+        <div class="nav_title">
+            <text class="nav_title_detail">{{component_name}}</text>
+        </div>
+
+        <div class="item_container">
+            <div class="swiper_container">
+                <swiper class="swiper" autoplay="{{autoPlay}}" interval="{{slider_value}}" indicator="{{indicator}}">
+                    <text class="item color_1">A</text>
+                    <text class="item color_2">B</text>
+                    <text class="item color_3">C</text>
+                </swiper>
+            </div>
+        </div>
+
+        <div class="item_container">
+            <div class="item_content">
+                <text class="item_content_title">指示点</text>
+                <switch class="switch" checked="true" onchange="indicator_show"></switch>
+            </div>
+            <div class="item_content">
+                <text class="item_content_title">自动播放</text>
+                <switch class="switch" checked="true" onchange="autoPlay_start"></switch>
+            </div>
+        </div>
+
+        <div class="item_container">
+            <div class="item_content">
+                <text class="item_content_title" change="autoPlay_change">自动播放间隔时长(ms)</text>
+                <text class="item_left">{{slider_value}}</text>
+            </div>
+            <slider class="slider" min="1000" max="3000" onchange="slider_change"></slider>
+        </div>
+    </div>
+</template>
+
+<style>
+    @import '../Common/css/common.css';
+    .item_container{
+        margin: 0 60px 50px;
+        flex-direction: column;
+    }
+    .swiper_container{
+        flex-direction: column;
+    }
+    .swiper{
+        flex-direction: column;
+        height: 250px;
+    }
+    .item_content_title{
+        flex: 1;
+        padding: 20px 0;
+    }
+    .item_left{
+        padding: 20px;
+    }
+    .switch{
+        height: 50px;
+        width: 320px;
+    }
+    .slider{
+        width: 100%;
+        padding: 0 50px;
+    }
+    .item{
+        height: 250px;
+        text-align: center;
+        color: #ffffff;
+    }
+    .color_1{
+        background-color: #0faeff;
+    }
+    .color_2{
+        background-color: #f76160;
+    }
+    .color_3{
+        background-color: #09ba07;
+    }
+
+</style>
+
+<script>
+    export default {
+        data:{
+            component_name:"swiper",
+            autoPlay: true,
+            indicator: true,
+            slider_value: 1000
+        },
+        indicator_show: function (e) {
+            this.indicator = e.checked;
+        },
+        autoPlay_start: function (e) {
+            this.autoPlay = e.checked;
+        },
+        slider_change: function (e) {
+            this.slider_value = e.progress;
+        }
+    }
+</script>
