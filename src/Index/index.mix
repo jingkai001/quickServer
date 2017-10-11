@@ -1,18 +1,98 @@
+<import name="compo-swiper1" src="../Component_Swiper1/index"></import>
+<import name="compo-refresh1" src="../Component_Refresh1"></import>
+
 <template>
     <div class="container">
         <div class="header-container">
             <div class="profile-icon">
-                <image class="image" src="/Common/img/route.png"></image>
-                <div></div>
+                <image class="image" src="/Common/img/route.png" resize-mode="center"></image>
+            </div>
+            <div class="nav-container">
+                <text class="nav-detail {{list.recommend}}" onclick="select_conFn('recommend')">推荐</text>
+                <text class="nav-detail {{list.original}}" onclick="select_conFn('original')">原创</text>
+                <text class="nav-detail {{list.weekFocus}}" onclick="select_conFn('weekFocus')">周榜</text>
             </div>
         </div>
-        <div class="body-container"></div>
+        <compo-refresh1>
+            <div class="body-container">
+                <compo-swiper1></compo-swiper1>
+            </div>
+        </compo-refresh1>
+
     </div>
 </template>
 
-<style>
+<style lang="less" type="text/less">
+    .container {
+        background-color: #fbf9fe;
+        flex: 1;
+        flex-direction: column;
+        .header-container {
+            height: 100px;
+            border-bottom-width: 1px;
+            border-color: #aaaaaa;
+            .profile-icon {
+                margin: 0 10px;
+                flex: 1;
+            }
+            .nav-container {
+                align-items: center;
+                justify-content: center;
+                flex: 6;
+                .nav-detail {
+                    height: 100%;
+                    text-align: center;
+                    flex: 1;
+                    font-size: 40px;
+                    color: #333333;
+                }
+            }
+        }
+        .show {
+            border-bottom-width: 3px;
+            border-color: #f76160;
+        }
+        .body-container {
+            flex-direction: column;
+            height: 3000px;
+        }
+    }
+
+
 </style>
 
 <script>
+    import router from '@system.router';
 
+    export default {
+        data: {
+            component_name: 'title',
+            list: {
+                recommend: '',
+                original: '',
+                weekFocus: ''
+            }
+        },
+        detail: function (src) {
+            router.push({"uri": src})
+        },
+
+        activeF: function (list, target, addClass) {
+            if (list[target] == addClass) {
+                console.log('判断是否获取数据')
+            }
+
+            for (let key in list) {
+                list[key] = '';
+                if (target == key) {
+                    list[key] = addClass;
+                }
+            }
+            console.log(JSON.stringify(this.list))
+        },
+
+        select_conFn: function (navbar) {
+            this.activeF(this.list, navbar, 'show');
+        }
+    }
 </script>

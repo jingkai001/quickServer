@@ -128,7 +128,7 @@
                             </div>
                             <div class="item_li" onclick="detail('Style_Animation')">
                                 <text class="item_li_detail">animation</text>
-                                <image class="item_arrow_img" src-="/Common/img/arrow_right.png" resize-mode="contain"></image>
+                                <image class="item_arrow_img" src="/Common/img/arrow_right.png" resize-mode="contain"></image>
                             </div>
                             <div class="item_li" onclick="detail('Style_Transform')">
                                 <text class="item_li_detail">transform</text>

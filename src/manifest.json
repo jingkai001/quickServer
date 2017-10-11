@@ -16,8 +16,11 @@
     "logLevel": "debug"
   },
   "router": {
-    "entry": "Home",
+    "entry": "Index",
     "pages": {
+      "Index":{
+        "component":"index"
+      },
       "Home": {
         "component": "index"
       },
@@ -83,12 +86,23 @@
       },
       "Style_Transform":{
         "component":"index"
+      },
+      "Style_Animation":{
+        "component":"index"
+      },
+
+
+      "Component_Swiper1":{
+        "component":"index"
+      },
+      "Component_Refresh1":{
+        "component":"index"
       }
     }
   },
   "display": {
     "backgroundColor":"#ffffff",
-    "titleBar":true,
+    "titleBar":false,
     "titleBarBackgroundColor": "#0faeff",
     "titleBarTextColor": "#414141",
     "pages": {
@@ -157,6 +171,9 @@
       },
       "Style_Transform":{
         "titleBarText":"Transform"
+      },
+      "Style_Animation":{
+        "titleBarText":"Animation"
       }
     }
   }

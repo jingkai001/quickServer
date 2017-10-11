@@ -48,9 +48,9 @@
 /***/ 0:
 /***/ function(module, exports, __webpack_require__) {
 
-	var $app_template$ = __webpack_require__(61)
-	var $app_style$ = __webpack_require__(62)
-	var $app_script$ = __webpack_require__(63)
+	var $app_template$ = __webpack_require__(67)
+	var $app_style$ = __webpack_require__(68)
+	var $app_script$ = __webpack_require__(69)
 	
 	$app_define$('@app-component/index', [], function($app_require$, $app_exports$, $app_module$){
 	     $app_script$($app_module$, $app_exports$, $app_require$)
@@ -66,7 +66,7 @@
 
 /***/ },
 
-/***/ 61:
+/***/ 67:
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -770,7 +770,42 @@
 	                              ]
 	                            }
 	                          ]
-	                        },
+	                        }
+	                      ]
+	                    }
+	                  ]
+	                },
+	                {
+	                  "type": "div",
+	                  "attr": {},
+	                  "classList": [
+	                    "item_container"
+	                  ],
+	                  "children": [
+	                    {
+	                      "type": "div",
+	                      "attr": {},
+	                      "classList": [
+	                        "item_title"
+	                      ],
+	                      "children": [
+	                        {
+	                          "type": "text",
+	                          "attr": {
+	                            "value": "其它"
+	                          },
+	                          "classList": function () {return ['item_title_detail', this.list.compo_others]},
+	                          "events": {
+	                            "click": function (evt) {this.select_conFn('compo_others',evt)}
+	                          }
+	                        }
+	                      ]
+	                    },
+	                    {
+	                      "type": "div",
+	                      "attr": {},
+	                      "classList": function () {return ['item_content', this.list.compo_others]},
+	                      "children": [
 	                        {
 	                          "type": "div",
 	                          "attr": {},
@@ -832,6 +867,68 @@
 	                              ]
 	                            }
 	                          ]
+	                        },
+	                        {
+	                          "type": "div",
+	                          "attr": {},
+	                          "classList": [
+	                            "item_li"
+	                          ],
+	                          "events": {
+	                            "click": function (evt) {this.detail('Style_Animation',evt)}
+	                          },
+	                          "children": [
+	                            {
+	                              "type": "text",
+	                              "attr": {
+	                                "value": "animation"
+	                              },
+	                              "classList": [
+	                                "item_li_detail"
+	                              ]
+	                            },
+	                            {
+	                              "type": "image",
+	                              "attr": {
+	                                "src": "/Common/img/arrow_right.png",
+	                                "resizeMode": "contain"
+	                              },
+	                              "classList": [
+	                                "item_arrow_img"
+	                              ]
+	                            }
+	                          ]
+	                        },
+	                        {
+	                          "type": "div",
+	                          "attr": {},
+	                          "classList": [
+	                            "item_li"
+	                          ],
+	                          "events": {
+	                            "click": function (evt) {this.detail('Style_Transform',evt)}
+	                          },
+	                          "children": [
+	                            {
+	                              "type": "text",
+	                              "attr": {
+	                                "value": "transform"
+	                              },
+	                              "classList": [
+	                                "item_li_detail"
+	                              ]
+	                            },
+	                            {
+	                              "type": "image",
+	                              "attr": {
+	                                "src": "/Common/img/arrow_right.png",
+	                                "resizeMode": "contain"
+	                              },
+	                              "classList": [
+	                                "item_arrow_img"
+	                              ]
+	                            }
+	                          ]
 	                        }
 	                      ]
 	                    }
@@ -848,7 +945,7 @@
 
 /***/ },
 
-/***/ 62:
+/***/ 68:
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -936,7 +1033,7 @@
 
 /***/ },
 
-/***/ 63:
+/***/ 69:
 /***/ function(module, exports) {
 
 	module.exports = function(module, exports, $app_require$){'use strict';
@@ -952,7 +1049,8 @@
 	        list: {
 	            compo_view: '',
 	            compo_basic: '',
-	            compo_form: ''
+	            compo_form: '',
+	            compo_others: ''
 	        }
 	    }},
 	

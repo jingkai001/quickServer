@@ -1,0 +1,38 @@
+<template>
+    <div class="container">
+        <!--onrefresh事件：下拉refresh组件，触发刷新操作，事件参数：refreshing
+            refreshing： 属性，刷新组件是否正在刷新-->
+        <refresh class="refresh" onrefresh="refresh" refreshing="{{is_refreshing}}">
+            <slot></slot>
+        </refresh>
+    </div>
+</template>
+
+<style>
+    @import '../Common/css/common.css';
+
+    .refresh{
+        flex-direction: column;
+        flex: 1;
+    }
+</style>
+
+<script>
+    import prompt from '@system.prompt';
+    export default {
+        data: {
+            is_refreshing: false,
+        },
+        // 下拉刷新时，触发refresh方法，e.refreshing为true，设置组件的refreshing值为true，此时可以进行一些异步操作，获取数据等，异步完成设置组件的refreshing属性为false
+        refresh: function (e) {
+            console.log(111)
+            this.is_refreshing = e.refreshing;
+            setTimeout(()=>{
+                this.is_refreshing = 'false';
+                prompt.showToast({
+                    message:'刷新完成'
+                })
+            },2000)
+        },
+    }
+</script>

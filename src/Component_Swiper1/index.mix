@@ -1,0 +1,46 @@
+<template>
+    <div class="swiper_container">
+        <swiper class="swiper" autoplay="{{autoPlay}}" interval="{{slider_value}}" indicator="{{indicator}}">
+            <image class="item" src="/Common/img/xmad.jpg" resize-mode="contain"></image>
+            <image class="item" src="/Common/img/xmad.jpg" resize-mode="contain"></image>
+            <image class="item" src="/Common/img/xmad.jpg" resize-mode="contain"></image>
+        </swiper>
+    </div>
+</template>
+
+<style>
+    .swiper_container {
+        flex-direction: column;
+        flex:1;
+    }
+
+    .swiper {
+        flex-direction: column;
+        height: 406px;
+    }
+
+    .item {
+        text-align: center;
+        color: #ffffff;
+    }
+</style>
+
+<script>
+    export default {
+        data: {
+            component_name: "swiper",
+            autoPlay: true,
+            indicator: true,
+            slider_value: 3000
+        },
+        indicator_show: function (e) {
+            this.indicator = e.checked;
+        },
+        autoPlay_start: function (e) {
+            this.autoPlay = e.checked;
+        },
+        slider_change: function (e) {
+            this.slider_value = e.progress;
+        }
+    }
+</script>
